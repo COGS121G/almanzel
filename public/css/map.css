@@ -1,0 +1,22 @@
+.col-md-3 h4{
+	
+	text-align: center;
+}
+
+.col-md-3 select{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px
+}
+
+#updateBtn{
+	background-color: white;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#filter{
+	padding-bottom: 20px;
+}

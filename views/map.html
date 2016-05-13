@@ -1,0 +1,82 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/map.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet"> 
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+</head>
+
+<header>
+	<div class="row" style="background-color: #545454">
+		<div class="col-md-4">
+			<h3>Al Manzel</h3>
+		</div>
+		<div class="col-md-8">
+	      <div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right:2%; margin-top: 15px">
+	        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
+	      </div>
+	     </div>
+    </div>
+</header>
+
+<body>
+	<div class="row">
+		<div class="col-md-3" id="filter" style="background-color: #D3D3D3">
+		      <h4>Number of Adults</h4>
+			  <select class="formAdult input-lg" >
+				  <option>1 </option>
+				  <option>2 </option>
+				  <option>3 </option>
+				  <option>4 </option>
+				  <option>5+ </option>
+			  </select></br>
+			  <h4>Number of Children</h4>
+			  <select class="formChild input-lg" >
+				  <option>1 </option>
+				  <option>2 </option>
+				  <option>3 </option>
+				  <option>4 </option>
+				  <option>5+ </option>
+			  </select></br>
+			  <h4>Expected Income</h4>
+			  <select class="ExpectedIncome input-lg" 
+				  <option>15K - 30K</option>
+				  <option>30K - 50K</option>
+				  <option>50K - 70K</option>
+				  <option>70K - 90K</option>
+				  <option>90k+</option>
+			  </select></br>
+			  <h4>Race</h4>
+			  <select class="race input-lg" >
+				  <option>Middle Eastern</option>
+				  <option>Asian</option>
+				  <option>White</option>
+				  <option>Black</option>
+				  <option>Hispanic</option>
+			  </select></br>
+			  <h4>Transportation</h4>
+			  <select class="transportation input-lg" >
+				  <option>Car</option>
+				  <option>Public Transport</option>
+			  </select></br>
+			  <button type="button" id="updateBtn" class="btn btn-secondary" data-toggle="modal" data-target="#update" >Update</button>
+		</div>
+
+		<div class="col-md-9">
+			<!-- Insert Map here -->
+		</div>
+	 </row>
+</body>
+
+</html> 
+
+
+
+
