@@ -44,7 +44,7 @@ function makeMap(data) {
       .attr('class', 'd3-tip')
       .offset([-10, 0])
       .html(function(d) {
-        return "<strong> Total Crimes :</strong> <span style='color:red'>" + d + "</span>";
+        return "<strong>Location Stats:</strong> <span style='color:red'>" + d + "</span>";
       });
 
 
@@ -96,7 +96,7 @@ function makeMap(data) {
 function mapColor(name, data, max) {
   var color = d3.scale.linear()
   .domain([0, .02, .2])
-  .range(["white", "orange", "darkred"]);
+  .range(["white", "red", "darkred"]);
 
   for(var i in data) {
     if( data[i].community == name ) {
