@@ -60,7 +60,10 @@ function makeMap(data) {
       .append("path")
       .attr("id", function(d){ return d.properties.NAME; } )
       .attr("class", "map_piece")
-      .on("click", function(d){ getCommunityCrimes(d.properties.NAME); } )
+      .on("click", function() {
+    $('html,body').animate({
+        scrollTop: $(".locationInfo").offset().top},
+        'slow');})
        .on("mouseover",tip.show)
        .on("mouseout", tip.hide);
 
@@ -96,7 +99,7 @@ function makeMap(data) {
 function mapColor(name, data, max) {
   var color = d3.scale.linear()
   .domain([0, .02, .2])
-  .range(["white", "red", "darkred"]);
+  .range(["red", "green", "darkred"]);
 
   for(var i in data) {
     if( data[i].community == name ) {
