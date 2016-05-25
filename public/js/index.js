@@ -2,6 +2,7 @@
 (function(d3) {
   "use strict";
 
+console.log("ASDSDDD")
   // ASSIGNMENT PART 1B
   // Grab the delphi data from the server
   d3.json("/delphidata", function(err, data) {
@@ -18,8 +19,6 @@
 
 
 makeDelphiChart = function(data) {
-
-
 
 var margin = {top: 20, right: 10, bottom: 100, left: 80},
       width = 960 - margin.right - margin.left;

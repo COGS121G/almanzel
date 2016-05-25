@@ -17,6 +17,7 @@ function makeMap(data) {
 
   var max = d3.max( data.map(function(d){ return parseInt(d.total); }) );
 
+console.log(data);
 
   var map = L.map('map').setView([32.969, -116.9], 9);
 
@@ -44,10 +45,9 @@ function makeMap(data) {
       .attr('class', 'd3-tip')
       .offset([-10, 0])
       .html(function(d) {
+
         return "<strong>Location Stats:</strong> <span style='color:red'>" + d + "</span>";
       });
-
-
 
     var transform = d3.geo.transform({point: projectPoint}),
         path = d3.geo.path().projection(transform);
@@ -111,12 +111,5 @@ function mapColor(name, data, max) {
 }
 
 function printInfo(name, data) {
-  for(var i in data) {
-    if( data[i].community == name ) {
-      $('#initialText').css('display', 'none');
-      $('#crimeInfoText').css('display', 'block');
-      $('.communityName').text(name);
-      $('#numberOfCrimes').text(data[i].total);
-    }
-  }
+  
 }
