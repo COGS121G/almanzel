@@ -34,8 +34,20 @@ app.get('/', function(req, res){
   res.render('index');
 });
 
-app.get('/indexFilter', function(req, res) {
-  res.render('indexFilter');
+app.get('/index1', function(req, res) {
+  res.render('index1');
+});
+
+app.get('/index2', function(req, res) {
+  res.render('index2');
+});
+
+app.get('/index3', function(req, res) {
+  res.render('index3');
+});
+
+app.get('/index4', function(req, res) {
+  res.render('index4');
 });
 
 app.get('/map', function(req, res) {

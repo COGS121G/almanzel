@@ -5,8 +5,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Home Page</title>
-
     <link rel="stylesheet" type="text/css" href="index.css">
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet"> 
@@ -21,6 +19,8 @@
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'> 
 
+   
+
 </head>
 
 <body>
@@ -28,7 +28,6 @@
 	<!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
 
-  
     <header>
         <div class="row" >
             <div class="col-md-4" id="title">
@@ -43,25 +42,43 @@
     </header>
 
     <body id="top" class="header">
+        
 
         <div class="col-md-3">
         </div>
 
         <div class="col-md-6">
-            <div class = "transbox">
-                </br>
-                <h3>Welcome to San Diego! <br></br>
-                    Al Manzel is a tool that helps you choose<br>
-                    the best location for you and your family<br>
-                    to set up your new home!</br>
-                </h3>
-                <br>
-                <a href="/index1" class="btn btn-dark btn-lg" style="background-color:black">Tell us about your family</a> <br> <br>
-            </div>
+        
+            <div class = "transbox2">  
+
+                  <h4>How big is your family?</h4>
+                  <select class="formAdult input-lg" >
+                      <option>1 Adult</option>
+                      <option>2 Adult</option>
+                      <option>3 Adult</option>
+                      <option>4 Adult</option>
+                      <option>5+ Adults</option>
+                  </select>
+                  <select class="formChild input-lg" >
+                      <option>1 Child</option>
+                      <option>2 Children</option>
+                      <option>3 Children</option>
+                      <option>4 Children</option>
+                      <option>5+ Children</option>
+                  </select>
+                  </br>
+                  </br>
+                  <button onclick="window.location.href='/'" type="button" id="left" data-toggle="modal" data-target="#update" ><b></b>Back</button>
+                  <button onclick="window.location.href='/index2'" type="button" id="right" data-toggle="modal" data-target="#update" ><b></b>Next</button>
+            </div> 
+         
         </div>
 
         <div class="col-md-3">
-        </div>
+        </div>        
+                       
+       
+   
         
     </body>
 
