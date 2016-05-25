@@ -46,7 +46,7 @@ console.log(data);
       .offset([-10, 0])
       .html(function(d) {
 
-        return "<strong>Location Stats:</strong> <span style='color:red'>" + d + "</span>";
+        return "<strong>Location Stats:</strong> <span style='color:red'>" + d.properties.NAME + "</span>";
       });
 
     var transform = d3.geo.transform({point: projectPoint}),
@@ -58,7 +58,7 @@ console.log(data);
       .data(collection.features)
       .enter()
       .append("path")
-      .attr("id", function(d){ return d.properties.NAME; } )
+      .attr("id", function(d){return d.properties.NAME; } )
       .attr("class", "map_piece")
       .on("click", function() {
     $('html,body').animate({
@@ -105,6 +105,10 @@ function mapColor(name, data, max) {
     if( data[i].community == name ) {
       return color(data[i].total/max);
     }
+//    else {
+  //    console.log("data "+data[i].community)
+    //  console.log("name " +name)
+  //  }
   }
 
   return "black";
