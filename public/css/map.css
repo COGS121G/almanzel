@@ -88,3 +88,21 @@
 .map_piece:hover {
   fill-opacity: 1.0 !important;  
 }
+
+/* bar chat */
+
+.chart {
+  display: block;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.chart rect {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: orangered ;
+}
