@@ -115,143 +115,138 @@
 				<p>
 			</div>
 		</div>
+
+
+		<div class="locationInfo" class="jumbotron vertical-center">
+		<br>
+		<h1 style="margin:15px">El Cajon<h1>
+		<h3 style="margin:15px">El Cajon is a city in San Diego County, California, United States. Nestled in a valley surrounded by mountains, the city has acquired the nickname of "The Big Box"<h3>
+		<br>
+		<img src="./img/img1.jpg" style="width: 350px; height: 350px; margin: 15px;">
+		<img src="./img/img2.jpg" style="width: 350px; height: 350px; margin: 15px;">
+		<img src="./img/img3.gif" style="width: 350px; height: 350px; margin: 15px;">
+			
+		</div>
+
+
+		<div class="section">
+			<div id="pieChart" class="jumbotron vertical-center">
+				
+				<script src="./js/d3.min.js"></script>
+				<script src="./js/d3pie.js"></script>
+				<script>
+					var pie = new d3pie("pieChart", {
+						"header": {
+							"title": {
+								"text": "Current Income Distribution",
+								"fontSize": 22,
+								"font": "verdana"
+							},
+							"subtitle": {
+								"color": "#999999",
+								"fontSize": 10,
+								"font": "verdana"
+							},
+							"titleSubtitlePadding": 12
+						},
+						"footer": {
+							"text": "Source: DELPHI",
+							"color": "#999999",
+							"fontSize": 11,
+							"font": "open sans",
+							"location": "bottom-center"
+						},
+						"size": {
+							"canvasWidth": 800,
+							"pieOuterRadius": "88%"
+						},
+						"data": {
+							"content": [
+								{
+									"label": "<$15K",
+									"value": 5725,
+									"color": "#2383c1"
+								},
+								{
+									"label": "$15K - $35K",
+									"value": 9717,
+									"color": "#64a61f"
+								},
+								{
+									"label": "$35K - $50K",
+									"value": 5821,
+									"color": "#7b6788"
+								},
+								{
+									"label": "$50K - $75K",
+									"value": 7174,
+									"color": "#a05c56"
+								},
+								{
+									"label": "$75K - $100K",
+									"value": 4708,
+									"color": "#961919"
+								},
+								{
+									"label": "$100K - $150K",
+									"value": 4842,
+									"color": "#a7b36d"
+								},
+								{
+									"label": "$150K - $200K",
+									"value": 1867,
+									"color": "#e98125"
+								},
+								{
+									"label": ">$200K",
+									"value": 1431,
+									"color": "#d0743c"
+								}
+							]
+						},
+						"labels": {
+							"outer": {
+								"pieDistance": 32
+							},
+							"mainLabel": {
+								"color": "#000000",
+								"font": "verdana"
+							},
+							"percentage": {
+								"color": "#e1e1e1",
+								"font": "verdana",
+								"decimalPlaces": 0
+							},
+							"value": {
+								"color": "#e1e1e1",
+								"font": "verdana"
+							},
+							"lines": {
+								"enabled": true,
+								"color": "#cccccc"
+							},
+							"truncation": {
+								"enabled": true
+							}
+						},
+						"tooltips": {
+							"enabled": true,
+							"type": "placeholder",
+							"string": "{value} households"
+						},
+						"effects": {
+							"pullOutSegmentOnClick": {
+								"effect": "linear",
+								"speed": 400,
+								"size": 8
+							}
+						},
+						"callbacks": {}
+					});
+				</script>
+			</div>
+		</div>
 	</center>
-<div class="locationInfo" class="jumbotron vertical-center">
-<br>
-<h1 style="margin:15px">El Cajon<h1>
-<h3 style="margin:15px">El Cajon is a city in San Diego County, California, United States. Nestled in a valley surrounded by mountains, the city has acquired the nickname of "The Big Box"<h3>
-<br>
-<img src="./img/img1.jpg" style="width: 350px; height: 350px; margin: 15px;">
-<img src="./img/img2.jpg" style="width: 350px; height: 350px; margin: 15px;">
-<img src="./img/img3.gif" style="width: 350px; height: 350px; margin: 15px;">
-	
-</div>
-
-<div id="pieChart" class="jumbotron vertical-center">
-	
-	<script src="./js/d3.min.js"></script>
-	<script src="./js/d3pie.js"></script>
-	<script>
-		var pie = new d3pie("pieChart", {
-			"header": {
-				"title": {
-					"text": "Current Income Distribution",
-					"fontSize": 22,
-					"font": "verdana"
-				},
-				"subtitle": {
-					"color": "#999999",
-					"fontSize": 10,
-					"font": "verdana"
-				},
-				"titleSubtitlePadding": 12
-			},
-			"footer": {
-				"text": "Source: DELPHI",
-				"color": "#999999",
-				"fontSize": 11,
-				"font": "open sans",
-				"location": "bottom-center"
-			},
-			"size": {
-				"canvasWidth": 800,
-				"pieOuterRadius": "88%"
-			},
-			"data": {
-				"content": [
-					{
-						"label": "<$15K",
-						"value": 5725,
-						"color": "#2383c1"
-					},
-					{
-						"label": "$15K - $35K",
-						"value": 9717,
-						"color": "#64a61f"
-					},
-					{
-						"label": "$35K - $50K",
-						"value": 5821,
-						"color": "#7b6788"
-					},
-					{
-						"label": "$50K - $75K",
-						"value": 7174,
-						"color": "#a05c56"
-					},
-					{
-						"label": "$75K - $100K",
-						"value": 4708,
-						"color": "#961919"
-					},
-					{
-						"label": "$100K - $150K",
-						"value": 4842,
-						"color": "#a7b36d"
-					},
-					{
-						"label": "$150K - $200K",
-						"value": 1867,
-						"color": "#e98125"
-					},
-					{
-						"label": ">$200K",
-						"value": 1431,
-						"color": "#d0743c"
-					}
-				]
-			},
-			"labels": {
-				"outer": {
-					"pieDistance": 32
-				},
-				"mainLabel": {
-					"color": "#000000",
-					"font": "verdana"
-				},
-				"percentage": {
-					"color": "#e1e1e1",
-					"font": "verdana",
-					"decimalPlaces": 0
-				},
-				"value": {
-					"color": "#e1e1e1",
-					"font": "verdana"
-				},
-				"lines": {
-					"enabled": true,
-					"color": "#cccccc"
-				},
-				"truncation": {
-					"enabled": true
-				}
-			},
-			"tooltips": {
-				"enabled": true,
-				"type": "placeholder",
-				"string": "{value} households"
-			},
-			"effects": {
-				"pullOutSegmentOnClick": {
-					"effect": "linear",
-					"speed": 400,
-					"size": 8
-				}
-			},
-			"callbacks": {}
-		});
-	</script>
-
-
-</div>
-
-
-
-
-
- 	
-
-
 
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
