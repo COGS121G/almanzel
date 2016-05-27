@@ -27,9 +27,9 @@ console.log(data);
     accessToken: 'pk.eyJ1IjoianlwMDMzIiwiYSI6ImNpbzNvNjE4MzAxYWp2emx6cnB1bHFodTAifQ.2xzuBa4B89Vjod3fEYSFkA'
   }).addTo(map);;
 
-  map.dragging.disable();
+ // map.dragging.disable();
   map.touchZoom.disable();
-  map.doubleClickZoom.disable();
+ // map.doubleClickZoom.disable();
   map.scrollWheelZoom.disable();
   map.keyboard.disable();
 

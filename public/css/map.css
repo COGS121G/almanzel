@@ -51,7 +51,7 @@
 }
 
 .map_piece {
-  fill-opacity: .7 !important;
+  fill-opacity: .6 !important;
   stroke: #fff !important;
   stroke-width: 1px !important;
 }
