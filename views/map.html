@@ -32,8 +32,36 @@
 			Al Manzel
 		</div>
 		<div class="col-md-8">
-	      <div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right:2%; margin-top: 15px">
-	        <button type="button" id="helpBtn" class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
+	      <!--<div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right:2%; margin-top: 15px">
+	        <button type="button" id="helpBtn" class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>-->
+
+
+
+	        <!-- The overlay -->
+			<div id="myNav" class="overlay">
+
+			  <!-- Button to close the overlay navigation -->
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+			  <!-- Overlay content -->
+			  <div class="overlay-content" id="helpInfo">
+			    <b>Al Manzel</b> means <b>home</b> in Arabic.
+			    </br>
+			    We aim to help refugees and immigrants find a new home in San Diego.</br>
+			    Using factors such as housing cost, language, culture, </br>education, and age range, we help you and your family </br>have the best chance to succeed in San Diego. 
+
+			  </div>
+
+			</div>
+
+			<!-- Use any element to open/show the overlay navigation menu -->
+			<!--<span onclick="openNav()">open</span>-->
+
+
+			<div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right:2%; margin-top: 15px">
+	        <button onclick="openNav()" type="button" id="helpBtn" class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
+
+
 
 	      </div>
 	     </div>
@@ -253,6 +281,7 @@
   <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
   <script src="./js/map.js"></script>
   <script src="./js/index.js"></script>
+  <script src="./js/custom.js"></script>
 </body>
 
 </html> 
