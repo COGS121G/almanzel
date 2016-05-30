@@ -23,8 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(session({ secret: 'keyboard cat',
-                  saveUninitialized: true,
-                  resave: true}));
+saveUninitialized: true,
+resave: true}));
 
 //set environment ports and start application
 app.set('port', process.env.PORT || 3000);
@@ -58,17 +58,17 @@ app.get('/communities', function (req, res) {
   pg.connect(conString, function(err, client, done) {
 
     if(err) {
-    return console.error('error fetching client from pool', err);
+      return console.error('error fetching client from pool', err);
     }
 
     var q = 'SELECT c.community, COUNT(*) AS total \
-      FROM cogs121_16_raw.arjis_crimes c \
-      WHERE c.community <> \'\' \
-      GROUP BY c.community \
-      ORDER BY total ASC';
+    FROM cogs121_16_raw.arjis_crimes c \
+    WHERE c.community <> \'\' \
+    GROUP BY c.community \
+    ORDER BY total ASC';
 
     client.query( q, function(err, result) {
-    //call `done()` to release the client back to the pool
+      //call `done()` to release the client back to the pool
       done();
 
       if(err) {
@@ -83,19 +83,11 @@ app.get('/communities', function (req, res) {
 });
 
 app.get('/delphidata', function (req, res) {
-  // TODO
-  // Connect to the DELPHI Database and return the proper information
-  // that will be displayed on the D3 visualization
-  // Table: Smoking Prevalance in Adults
-  // Task: In the year 2003, retrieve the total number of respondents
-  // for each gender. 
-  // Display that data using D3 with gender on the x-axis and 
-  // total respondents on the y-axis.
 
-   pg.connect(conString, function(err, client, done) {
+  pg.connect(conString, function(err, client, done) {
 
     if(err) {
-    return console.error('error fetching client from pool', err);
+      return console.error('error fetching client from pool', err);
     }
 
     var sanDiego = "'%IEG%'";
@@ -116,14 +108,14 @@ app.get('/delphidata', function (req, res) {
     console.log("sql");
     /*
     var myQuerry = 'SELECT gender, SUM(number_of_respondents) AS sum \
-      FROM cogs121_16_raw.cdph_smoking_prevalence_in_adults_1984_2013 t \
-      WHERE t.year = 2003 \
-      GROUP BY t.gender \
-      ORDER BY sum ASC';
+    FROM cogs121_16_raw.cdph_smoking_prevalence_in_adults_1984_2013 t \
+    WHERE t.year = 2003 \
+    GROUP BY t.gender \
+    ORDER BY sum ASC';
     */
 
     client.query(myQuerry , function(err, result) {
-    //call `done()` to release the client back to the pool
+      //call `done()` to release the client back to the pool
       done();
 
       if(err) {
@@ -143,6 +135,44 @@ app.get('/delphidata', function (req, res) {
 });
 
 
+
+app.get('/familyData', function (req, res) {
+
+  pg.connect(conString, function(err, client, done) {
+
+    if(err) {
+      return console.error('error fetching client from pool: familyData', err);
+    }
+
+    var nonString = "'%non%'";
+    var withString = "'%with%'";
+    var maleString = "'%male%'";
+
+
+    var myFamQuerry = 'SELECT Subregional Area AS area, Percentage, Household Type AS famType \
+    FROM cogs121_16_raw.hhsa_san_diego_demographics_household_compos_perc_2012_norm fam \
+    WHERE fam.famType LIKE '+nonString+' OR \
+    fam.famType NOT LIKE '+withString+' AND\
+    fam.famType NOT LIKE '+maleString+' \
+    GROUP BY area ;'
+
+    console.log("sqlFam");
+
+    client.query(myFamQuerry , function(err, result) {
+      done();
+      if(err) {
+        return console.error('error running Famquery', err);
+      }
+
+      res.json(result.rows);
+      client.end();
+      return { familyData: result };
+    });
+  });
+  return { familyData: "No data present." }
+});
+
+
 http.createServer(app).listen(app.get('port'), function() {
-    console.log('Express server listening on port ' + app.get('port'));
+  console.log('Express server listening on port ' + app.get('port'));
 });

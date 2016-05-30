@@ -3,7 +3,7 @@
   "use strict";
 
 console.log("ASDSDDD")
-  // ASSIGNMENT PART 1B
+
   // Grab the delphi data from the server
   d3.json("/delphidata", function(err, data) {
     if (err) {
@@ -14,7 +14,7 @@ console.log("ASDSDDD")
     console.log("Data", data);
   });
 
-})(d3);  
+})(d3);
 
 
 
@@ -67,7 +67,7 @@ var margin = {top: 20, right: 10, bottom: 100, left: 80},
     .attr("x", function(d, i) {
      return ((innerWidth / data.length)*i) + 45; })
     .attr("width", xScale.rangeBand()-10)
-    .attr("y", function(d) { 
+    .attr("y", function(d) {
     return innerHeight - d*(innerHeight/rating); })
     .attr("height", function(d) { return innerHeight*d/rating;  })
     .on("mouseover",tip.show)
@@ -81,7 +81,7 @@ var margin = {top: 20, right: 10, bottom: 100, left: 80},
         .append("g").attr("class", "x axis")
         .call(xAxis)
         .attr("transform", "translate(30," + innerHeight + ")")
-        .selectAll("text")  
+        .selectAll("text")
             .style("text-anchor", "end")
             .attr("font-size","14px")
             .attr("dx", "-.8em")
