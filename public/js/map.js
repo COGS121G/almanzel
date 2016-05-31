@@ -19,7 +19,7 @@ function makeMap(data) {
 
 console.log(data);
 
-  var map = L.map('map').setView([32.969, -116.9], 9);
+  var map = L.map('map').setView([32.9, -116.92], 10);
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     maxZoom: 18,
@@ -111,7 +111,7 @@ function mapColor(name, data, max) {
   //  }
   }
 
-  return "black";
+  return "grey";
 }
 
 function printInfo(name, data) {
