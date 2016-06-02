@@ -54,124 +54,72 @@ app.get('/map', function(req, res) {
   res.render('map');
 });
 
-app.get('/communities', function (req, res) {
-  pg.connect(conString, function(err, client, done) {
-
-    if(err) {
-      return console.error('error fetching client from pool', err);
-    }
-
-    var q = 'SELECT c.community, COUNT(*) AS total \
-    FROM cogs121_16_raw.arjis_crimes c \
-    WHERE c.community <> \'\' \
-    GROUP BY c.community \
-    ORDER BY total ASC';
-
-    client.query( q, function(err, result) {
-      //call `done()` to release the client back to the pool
-      done();
-
-      if(err) {
-        return console.error('error running query', err);
-      }
-      res.json(result.rows);
-      client.end();
-      return { delphidata: result };
-    });
-  });
-  return { delphidata: "No data found" };
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
 });
 
-app.get('/delphidata', function (req, res) {
+/*
+var community_querry = 'SELECT c.community, COUNT(*) AS total \
+FROM cogs121_16_raw.arjis_crimes c \
+WHERE c.community <> \'\' \
+GROUP BY c.community \
+ORDER BY total ASC'
+*/
 
-  pg.connect(conString, function(err, client, done) {
+var sanDiego = "'%IEG%'";
+var vista = "'%IST%'";
+var elC = "'%AJO%'";
+var nulll ="''";
+var nonString = "'%non%'";
+var withString = "'%with%'";
+var maleString = "'%male%'";
 
-    if(err) {
-      return console.error('error fetching client from pool', err);
-    }
+var crime_query = 'SELECT DISTINCT community, COUNT(community) AS community_occurence \
+FROM cogs121_16_raw.arjis_crimes t \
+WHERE t.community NOT LIKE'+ nulll+' AND\
+t.community NOT LIKE'+ sanDiego+' AND \
+t.community IS NOT NULL \
+GROUP BY community \
+HAVING count(community)>=120 \
+ORDER BY community_occurence DESC \
+LIMIT 10;'
 
-    var sanDiego = "'%IEG%'";
-    var vista = "'%IST%'";
-    var elC = "'%AJO%'";
-    var nulll ="''";
+var family_querry = 'SELECT Subregional Area AS area, Percentage, Household Type AS famType \
+FROM cogs121_16_raw.hhsa_san_diego_demographics_household_compos_perc_2012_norm fam \
+WHERE fam.famType LIKE '+nonString+' OR \
+fam.famType NOT LIKE '+withString+' AND\
+fam.famType NOT LIKE '+maleString+' \
+GROUP BY area ;'
 
-    var myQuerry = 'SELECT DISTINCT community, COUNT(community) AS community_occurence \
-    FROM cogs121_16_raw.arjis_crimes t \
-    WHERE t.community NOT LIKE'+ nulll+' AND\
-    t.community NOT LIKE'+ sanDiego+' AND \
-    t.community IS NOT NULL \
-    GROUP BY community \
-    HAVING count(community)>=120 \
-    ORDER BY community_occurence DESC \
-    LIMIT 10;'
+var pgVar = require('pg');
 
-    console.log("sql");
-    /*
-    var myQuerry = 'SELECT gender, SUM(number_of_respondents) AS sum \
-    FROM cogs121_16_raw.cdph_smoking_prevalence_in_adults_1984_2013 t \
-    WHERE t.year = 2003 \
-    GROUP BY t.gender \
-    ORDER BY sum ASC';
-    */
+function processQuery(req, res, pg, query){
+    pg.connect(conString, function(err, client, done) {
+        if(err) {
+            return console.error('error fetching client from pool', err);
+        }
+        client.query(query, function(err, result) {
+            done();
 
-    client.query(myQuerry , function(err, result) {
-      //call `done()` to release the client back to the pool
-      done();
+            if(err) {
+              return console.error('error running query', err);
+            }
 
-      if(err) {
-        return console.error('error running query', err);
-      }
+            res.json(result.rows);
+            client.end();
 
-      //json
-      res.json(result.rows);
-      client.end();
-
-      return { delphidata: result };
+        });
     });
-  });
+}
 
-
-  return { delphidata: "No data present." }
+app.get('/delphidata_crime', function (req, res) {
+    processQuery(req, res, pgVar, crime_query);
 });
 
-
-
-app.get('/familyData', function (req, res) {
-
-  pg.connect(conString, function(err, client, done) {
-
-    if(err) {
-      return console.error('error fetching client from pool: familyData', err);
-    }
-
-    var nonString = "'%non%'";
-    var withString = "'%with%'";
-    var maleString = "'%male%'";
-
-
-    var myFamQuerry = 'SELECT Subregional Area AS area, Percentage, Household Type AS famType \
-    FROM cogs121_16_raw.hhsa_san_diego_demographics_household_compos_perc_2012_norm fam \
-    WHERE fam.famType LIKE '+nonString+' OR \
-    fam.famType NOT LIKE '+withString+' AND\
-    fam.famType NOT LIKE '+maleString+' \
-    GROUP BY area ;'
-
-    console.log("sqlFam");
-
-    client.query(myFamQuerry , function(err, result) {
-      done();
-      if(err) {
-        return console.error('error running Famquery', err);
-      }
-
-      res.json(result.rows);
-      client.end();
-      return { familyData: result };
-    });
-  });
-  return { familyData: "No data present." }
+app.get('/delphidata_family', function (req, res) {
+    processQuery(req, res, pgVar, family_query);
 });
-
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));

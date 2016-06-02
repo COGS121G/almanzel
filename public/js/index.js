@@ -5,12 +5,12 @@
 console.log("ASDSDDD")
 
   // Grab the delphi data from the server
-  d3.json("/delphidata", function(err, data) {
+  d3.json("/delphidata_crime", function(err, data) {
     if (err) {
       console.log(err);
       return;
     }
-    makeDelphiChart(data);
+    makeDelphiCrimeChart(data);
     console.log("Data", data);
   });
 
@@ -18,7 +18,7 @@ console.log("ASDSDDD")
 
 
 
-makeDelphiChart = function(data) {
+makeDelphiCrimeChart = function(data) {
 
 var margin = {top: 20, right: 10, bottom: 100, left: 80},
       width = 960 - margin.right - margin.left;
