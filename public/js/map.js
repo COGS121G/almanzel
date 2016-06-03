@@ -53,6 +53,7 @@ console.log(data);
 
     g.call(tip);
 
+
     var feature = g.selectAll("path")
       .data(collection.features)
       .enter()
@@ -93,7 +94,13 @@ console.log(data);
       var point = map.latLngToLayerPoint(new L.LatLng(y, x));
       this.stream.point(point.x, point.y);
     }
-});
+    });
+
+   legend = svg.append("g")
+    .attr("class","legend")
+    .attr("transform","translate(50,30)")
+    .style("font-size","12px")
+    .call(d3.legend)
 
 }
 
