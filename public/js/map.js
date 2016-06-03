@@ -37,7 +37,7 @@ console.log(data);
   g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
 
-  d3.json("https://raw.githubusercontent.com/Saebyuckbaan/cogs121-sp16-ass2/master/sdcounty.json", function(error, collection) {
+  d3.json("https://raw.githubusercontent.com/COGS121G/almanzel/master/sdcounty.json", function(error, collection) {
     if (error) throw error;
 
     var tip = d3.tip()
