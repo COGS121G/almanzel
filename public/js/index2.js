@@ -15,18 +15,15 @@
 })(d3);  
 
 
-
 makeDelphiChart = function(data) {
 
-var margin = {top: 20, right: 10, bottom: 100, left: 80},
+  var margin = {top: 20, right: 10, bottom: 100, left: 80},
       width = 960 - margin.right - margin.left;
 
   var innerWidth  = width  - margin.left - margin.right;
 
   var rating = d3.max( data.map(function(d){ return d.community_occurence; }) );
   var innerHeight = rating/6 - margin.top  - margin.bottom;
-
-
 
   var xScale = d3.scale.ordinal().rangeRoundBands([0, innerWidth+1], .1);
   var yScale = d3.scale.linear().range([innerHeight, 0]);
@@ -40,7 +37,7 @@ var margin = {top: 20, right: 10, bottom: 100, left: 80},
 
   // Define the chart
   var chart = d3
-                .select(".chart")
+                .select("chart2")
                 .append("svg")
                 .attr("width", width + margin.right + margin.left)
                 .attr("height", innerHeight + margin.top + margin.bottom)
@@ -52,8 +49,6 @@ var margin = {top: 20, right: 10, bottom: 100, left: 80},
   yScale.domain([0, d3.max(data, function(d) {
         return rating;
     })]);
-
-
 
   chart.call(tip);
 
@@ -85,6 +80,7 @@ var margin = {top: 20, right: 10, bottom: 100, left: 80},
             .attr("dx", "-.8em")
             .attr("dy", ".15em")
             .attr("transform", "rotate(-65)" );
+
 
   // TODO: Append Y axis
   chart.append("g")

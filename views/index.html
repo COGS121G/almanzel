@@ -20,10 +20,11 @@
     <link rel="stylesheet" href="//rawgithub.com/Caged/d3-tip/master/examples/example-styles.css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'> 
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
 </head>
 
-<body>
+<body style="font-family: Roboto;">
 
 	<!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
@@ -35,10 +36,31 @@
                 <img src="./img/logo.png" style="width: 100px; height: 100px; margin: 15px;">
             </div>
             <div class="col-md-8">
-              <div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right:2%; margin-top: 15px">
-                <button id="helpBtn" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
-              </div>
-             </div>
+
+                <!-- The overlay -->
+                <div id="myNav" class="overlay">
+
+                  <!-- Button to close the overlay navigation -->
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                  <!-- Overlay content -->
+                  <div class="overlay-content" id="helpInfo">
+                    <b>Al Manzel</b> means <b>home</b> in Arabic.
+                    </br>
+                    We aim to help refugees and immigrants find a new home in San Diego.</br>
+                    Using factors such as housing cost, language, culture, </br>education, and age range, we help you and your family </br>have the best chance to succeed in San Diego. 
+
+                  </div>
+
+                </div>
+
+                <!-- Use any element to open/show the overlay navigation menu -->
+                <!--<span onclick="openNav()">open</span>-->
+
+
+                <div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right:2%; margin-top: 15px">
+                    <button onclick="openNav()" type="button" id="helpBtn" class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
+                </div>
         </div>
     </header>
 
@@ -79,6 +101,7 @@
 	<script src="./js/d3.min.js"></script>
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 	<script src="./js/index.js"></script>
+    <script src="./js/custom.js"></script>
 
 
 </body>

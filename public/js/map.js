@@ -9,7 +9,6 @@
     makeMap(data);
   });
 
-
 })(d3);  
 
 
@@ -19,7 +18,7 @@ function makeMap(data) {
 
 console.log(data);
 
-  var map = L.map('map').setView([32.969, -116.9], 9);
+  var map = L.map('map').setView([33.0, -116.92], 10);
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     maxZoom: 18,
@@ -46,7 +45,7 @@ console.log(data);
       .offset([-10, 0])
       .html(function(d) {
 
-        return "<strong>Location Stats:</strong> <span style='color:red'>" + d.properties.NAME + "</span>";
+        return "<strong>Location Stats:</strong> <span style='color: #FAD61E;'>" + d.properties.NAME + "</span>";
       });
 
     var transform = d3.geo.transform({point: projectPoint}),
@@ -60,10 +59,12 @@ console.log(data);
       .append("path")
       .attr("id", function(d){return d.properties.NAME; } )
       .attr("class", "map_piece")
-      .on("click", function() {
-    $('html,body').animate({
-        scrollTop: $(".locationInfo").offset().top},
-        'slow');})
+      .on("click", function(d) {
+        printInfo(d.properties.NAME, data);
+        $('html,body').animate({
+            scrollTop: $(".locationInfo").offset().top},
+                'slow');
+          })
        .on("mouseover",tip.show)
        .on("mouseout", tip.hide);
 
@@ -99,7 +100,7 @@ console.log(data);
 function mapColor(name, data, max) {
   var color = d3.scale.linear()
   .domain([0, .02, .2])
-  .range(["red", "green", "darkred"]);
+  .range(["darkgreen", "green", "red"]);
 
   for(var i in data) {
     if( data[i].community == name ) {
@@ -111,9 +112,17 @@ function mapColor(name, data, max) {
   //  }
   }
 
-  return "black";
+  return "darkred";
 }
 
 function printInfo(name, data) {
-  
+  for(var i in data) {
+    if( data[i].community == name ) {
+      console.log();
+      //$('.communityName').css('display', 'none');
+      $('#communityInfo').css('display', 'block');
+      $('.communityName').text(name);
+      $('#crimeInfo').text(data[i].total);
+    }
+  }
 }
