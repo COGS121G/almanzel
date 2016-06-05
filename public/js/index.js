@@ -68,8 +68,17 @@ var margin = {top: 20, right: 10, bottom: 100, left: 80},
     .attr("y", function(d) { 
     return innerHeight - d*(innerHeight/rating); })
     .attr("height", function(d) { return innerHeight*d/rating;  })
+    .on("click", function(d) {
+           if (d3.select(this).style("fill") != "#F3B529") {
+                d3.select(this).style("fill", "#F3B529");
+            }
+            else {
+                d3.select(this).style("fill", "#278FC2");
+            }
+          })
     .on("mouseover",tip.show)
-    .on("mouseout", tip.hide);
+    .on("mouseout", tip.hide)
+    ;
 
   // Orient the x and y axis
   var xAxis = d3.svg.axis().scale(xScale).orient("bottom");

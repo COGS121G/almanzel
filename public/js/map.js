@@ -16,8 +16,6 @@ function makeMap(data) {
 
   var max = d3.max( data.map(function(d){ return parseInt(d.total); }) );
 
-console.log(data);
-
   var map = L.map('map').setView([33.0, -116.92], 10);
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -61,7 +59,6 @@ console.log(data);
       .attr("id", function(d){return d.properties.NAME; } )
       .attr("class", "map_piece")
       .on("click", function(d) {
-        printInfo(d.properties.NAME, data);
         $('html,body').animate({
             scrollTop: $(".locationInfo").offset().top},
                 'slow');
@@ -101,7 +98,6 @@ console.log(data);
     .attr("transform","translate(50,30)")
     .style("font-size","12px")
     .call(d3.legend)
-
 }
 
 function mapColor(name, data, max) {
@@ -119,7 +115,7 @@ function mapColor(name, data, max) {
   //  }
   }
 
-  return "darkred";
+  return "grey ";
 }
 
 function printInfo(name, data) {
