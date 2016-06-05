@@ -11,6 +11,12 @@ var app = express();
 
 //client id and client secret here, taken from .env (which you need to create)
 dotenv.load();
+//var models = require("./models");
+
+var router = { 
+  index: require("./routes/index"),
+  map: require("./routes/map")
+};
 
 //connect to database
 var conString = process.env.DATABASE_CONNECTION_URL;
@@ -30,35 +36,15 @@ app.use(session({ secret: 'keyboard cat',
 app.set('port', process.env.PORT || 3000);
 
 //routes
-app.get('/', function(req, res){
-  res.render('index');
-});
+app.get('/', router.index.view);
 
-app.get('/index1', function(req, res) {
-  res.render('index1');
-});
-
-app.get('/index2', function(req, res) {
-  res.render('index2');
-});
-
-app.get('/index3', function(req, res) {
-  res.render('index3');
-});
-
-app.get('/index4', function(req, res) {
-  res.render('index4');
-});
-
-app.get('/map', function(req, res) {
-  res.render('map');
-});
+app.get('/map', router.map.view);
 
 app.get('/communities', function (req, res) {
   pg.connect(conString, function(err, client, done) {
 
     if(err) {
-    return console.error('error fetching client from pool', err);
+    return console.error('error fetching client fromx pool', err);
     }
 
     var q = 'SELECT c.community, COUNT(*) AS total \
