@@ -13,6 +13,7 @@
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 
 
     <!-- Custom Fonts -->
@@ -21,15 +22,15 @@
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'> 
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="js/jquery.js"></script> 
+    <script type="text/javascript" src="../js/sliding.form.js"></script>
 
 </head>
 
-<body style="font-family: Roboto;">
+<body id="top" class="header" style="font-family: Roboto;">
 
 	<!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-
-  
+    <!-- Set your background image for this header on the line below. -->  
     <header>
         <div class="row" >
             <div class="col-md-4" id="title">
@@ -40,68 +41,136 @@
                 <!-- The overlay -->
                 <div id="myNav" class="overlay">
 
-                  <!-- Button to close the overlay navigation -->
-                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <!-- Button to close the overlay navigation -->
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-                  <!-- Overlay content -->
-                  <div class="overlay-content" id="helpInfo">
+                    <!-- Overlay content -->
+                    <div class="overlay-content" id="helpInfo">
                     <b>Al Manzel</b> means <b>home</b> in Arabic.
                     </br>
                     We aim to help refugees and immigrants find a new home in San Diego.</br>
-                    Using factors such as housing cost, language, culture, </br>education, and age range, we help you and your family </br>have the best chance to succeed in San Diego. 
-
-                  </div>
-
+                    Using factors such as housing cost, language, culture, </br>education, and age range, we help you and your family </br>have the best chance to succeed in San Diego.
+                    </div>
                 </div>
-
-                <!-- Use any element to open/show the overlay navigation menu -->
-                <!--<span onclick="openNav()">open</span>-->
-
-
                 <div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right:2%; margin-top: 15px">
                     <button onclick="openNav()" type="button" id="helpBtn" class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
                 </div>
+            </div>    
         </div>
     </header>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+        <div id="content">
+        <div id="wrapper">
+            <div id="steps">
+                <form id="formElem" name="formElem" action="" method="get">
+                    <fieldset class="step">
+                        </br>
+                        <h3>Welcome to San Diego! <br></br>
+                            Al Manzel is a tool that helps you choose<br>
+                            the best location for you and your family<br>
+                            to set up your new home!</br>
+                        </h3>
+                        <a id="tellUs" class="btn btn-dark btn-lg" style="background-color:black">Tell us about your family</a> <br> <br>
+                    </fieldset>
+                    <fieldset class="step">
+                        <p >To determine what type of house suites you and your family, please tells us:</p>
 
-    <body id="top" class="header">
+                        <h3>How big is your family?</h3>
+                        <select class="formAdult input-lg" name="adults">
+                          <option>0 Adults</option>
+                          <option>1 Adult</option>
+                          <option>2 Adult</option>
+                          <option>3 Adult</option>
+                          <option>4 Adult</option>
+                          <option>5+ Adults</option>
+                        </select>
+                        <select class="formChild input-lg" name="children">
+                          <option>0 Child</option>
+                          <option>1 Child</option>
+                          <option>2 Children</option>
+                          <option>3 Children</option>
+                          <option>4 Children</option>
+                          <option>5+ Children</option>
+                        </select>
+                        </br>
+                        </br>
+                    </fieldset>
+                    <fieldset class="step">
+                        <p>To help us match you to an affordable neighborhood please tell us:<p> 
+                        <h3>What is your family's expected income?</h3>
+                        <select class="ExpectedIncome input-lg" name="income">
+                          <option>0K - 15K</option>
+                          <option>15K - 30K</option>
+                          <option>30K - 50K</option>
+                          <option>50K - 70K</option>
+                          <option>70K - 90K</option>
+                          <option>90k+</option>
+                        </select>
+                        </br>
+                    </fieldset>
+                    <fieldset class="step">
+                        <p>We try to match newly incoming immigrants to neighborhoods of similar race. Feel free to skip that question if that is not something you are concerned about.<p>
 
-        <div class="col-md-3">
-        </div>
+                        <h3>What is your race?</h3>
+                        <select class="race input-lg" name="race">
+                          <option>---</option>
+                          <option>Middle Eastern</option>
+                          <option>Asian</option>
+                          <option>White</option>
+                          <option>Black</option>
+                          <option>Hispanic</option>
+                        </select>
+                        </br>
+                        </br>
+                    </fieldset>
+                    <fieldset class="step">
+                        <p>Public transportation is more accessible in some neighborhoods rather than others. To help us find you the right neighborhood, please tell us:<p>
 
-        <div class="col-md-6">
-            <div class = "transbox">
-                </br>
-                <h3>Welcome to San Diego! <br></br>
-                    Al Manzel is a tool that helps you choose<br>
-                    the best location for you and your family<br>
-                    to set up your new home!</br>
-                </h3>
-                <br>
-                <a href="/index1" class="btn btn-dark btn-lg" style="background-color:black">Tell us about your family</a> <br> <br>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-        </div>
+                        <h3>What will be your mode of transportation?</h3>
+                        <select class="transportation input-lg" name="transportation">
+                          <option>Car</option>
+                          <option>Public Transport</option>
+                        </select>
+                        </br>
+                    </fieldset>
+                    <fieldset class="step">
+                        <p>
+                            Submit query
+                        </p>
+                        <p class="submit">
+                            <button id="registerButton" type="submit">Submit</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </div><!--end of step-->
         
-    </body>
-
-
-	    <!-- jQuery -->
-	    <script src="js/jquery.js"></script> 
-
-	    <!-- Bootstrap Core JavaScript -->
-	    <!-- <script src="js/bootstrap.min.js"></script> -->
-
-	    <!-- Custom Theme JavaScript -->
-	    <!-- <script src="js/clean-blog.min.js"></script> -->
-
-
-	<script src="./js/d3.min.js"></script>
-<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-	<script src="./js/index.js"></script>
-    <script src="./js/custom.js"></script>
-
-
+            <div id="navigation2" style="">
+                <ul>
+                    <li class="selected">
+                        <a id ="backButton" style="display:none">Back</a>
+                    </li>
+                    <li>
+                        <a id ="nextButton" style="display:none">Next</a>
+                    </li>
+                </ul>
+            </div>
+        </div><!--end of wrapper-->
+        </div><!--end of content-->
+    </div>
 </body>
+
+
+<!-- jQuery -->
+<!-- Bootstrap Core JavaScript -->
+<!-- <script src="js/bootstrap.min.js"></script> -->
+
+<!-- Custom Theme JavaScript -->
+<!-- <script src="js/clean-blog.min.js"></script> -->
+
+
+<script src="./js/d3.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/custom.js"></script>
