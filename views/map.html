@@ -26,16 +26,19 @@
 </head>
 
 <header>
-	<div class="row" id = "nav" style="height:60px;">
-		<div class="col-md-4" id="title">
-			<img onClick="toTop()" src="./img/logo.png" style="width: 40px; height: 40px; margin-left: 15px;">
-			Al Manzel
-
+	<div class="row" id = "nav" style="height:60px;" onClick="toTop()">
 			<script>
-			function toTop() {
-			    $("html, body").animate({ scrollTop: 0 }, "slow");
-			}
-			</script>
+	            function toTop() {
+	                $("html, body").animate({ scrollTop: 0 }, "slow");
+	            }
+            </script>
+		<div class="col-md-4" id="title">
+
+			<a href="/" style="text-decoration: none">
+				<img onClick="toIndex()" src="./img/logo.png" style="width: 40px; height: 40px; margin-left: 15px;">
+			</a>
+			Al Manzel
+			
 		</div>
 		<div class="col-md-8">
 	      <!--<div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right:2%; margin-top: 15px">
@@ -74,51 +77,59 @@
 	<div class="spacer">
     	&nbsp;
 	</div>
-	<div class="row" style="height:100%; background-color: #30373C;">
+	<div class="row" style="height:100%; background-color: #adafaf;">
 		<div class="col-md-3" id="filter" >
 		      <center>
 			<form>
 			</br>
 		      <p><label for="adults">Number of Adults</label></br>
 			  <select name="adults" class="input-lg" >
-				  <option>1 </option>
-				  <option>2 </option>
-				  <option>3 </option>
-				  <option>4 </option>
-				  <option>5+ </option>
+				  <option>0 Adults</option>
+                  <option>1 Adult</option>
+                  <option>2 Adults</option>
+                  <option>3 Adults</option>
+                  <option>4 Adults</option>
+                  <option>5+ Adults</option>
+                  <option>Prefer not to answer</option>
 			  </select></p>
 
 			  <p><label for="children">Number of Children</label></br>
 			  <select name="children" class="input-lg" >
-				  <option>1 </option>
-				  <option>2 </option>
-				  <option>3 </option>
-				  <option>4 </option>
-				  <option>5+ </option>
+				  <option>0 Children</option>
+                  <option>1 Child</option>
+                  <option>2 Children</option>
+                  <option>3 Children</option>
+                  <option>4 Children</option>
+                  <option>5+ Children</option>
+                  <option>Prefer not to answer</option>
 			  </select></p>
 
 			  <p><label for="income">Expected Income</label></br>
 			  <select name="income" class="input-lg" >
-				  <option>15K - 30K</option>
-				  <option>30K - 50K</option>
-				  <option>50K - 70K</option>
-				  <option>70K - 90K</option>
-				  <option>90k+</option>
+				  <option>0K - 15K</option>
+                  <option>15K - 30K</option>
+                  <option>30K - 50K</option>
+                  <option>50K - 70K</option>
+                  <option>70K - 90K</option>
+                  <option>90k+</option>
+                  <option>Prefer not to answer</option>
 			  </select></p>
 
 			  <p><label for="race">Race</label></br>
 			  <select name="race" class="input-lg" >
 				  <option>Middle Eastern</option>
-				  <option>Asian</option>
-				  <option>White</option>
-				  <option>African American</option>
-				  <option>Hispanic</option>
+                  <option>Asian</option>
+                  <option>White</option>
+                  <option>Black</option>
+                  <option>Hispanic</option>
+                  <option>Prefer not to answer</option>
 			  </select></p>
 
 			  <p><label for="transportation">Transportation</label></br>
 			  <select name="transportation" class="input-lg" >
 				  <option>Car</option>
 				  <option>Public Transport</option>
+				  <option>Prefer not to answer</option>
 			  </select></br></p>
 
 			  <input type="submit" value="Update" id="updateBtn" class="btn btn-secondary">
