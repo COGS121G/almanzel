@@ -129,7 +129,7 @@
 		</center>
 		</div>
 
-		<div class="col-md-9" style="display: inline-block; height:100% !important;">
+		<div id="mapdiv" class="col-md-9" style="display: inline-block; height:100% !important;" data-adults="{{adults}}" data-children="{{children}}" data-income="{{income}}" data-race="{{race}}" data-transportation="{{transportation}}">
 			<div id="map" style="width:100% !important; height:100% !important;"></div>
 		</div>
 	 </row>
@@ -140,7 +140,7 @@
 		<div class="locationInfo" class="jumbotron vertical-center">
 		<br></br></br></br>
 		<h1 style="margin:15px" class="communityName">El Cajon<h1>
-		<div id="infoText">Number of Crimes in the Area: <span id="crimeInfo"></span></div>
+		<div id="infoText">More Info Here <span id="commInfo"></span></div>
 		<img src="./img/img1.jpg" style="width: 350px; height: 350px; margin: 15px;">
 		<img src="./img/img2.jpg" style="width: 350px; height: 350px; margin: 15px;">
 		<img src="./img/img3.gif" style="width: 350px; height: 350px; margin: 15px;">
@@ -152,6 +152,8 @@
 
 			<div id="chart" class="chart">
 			</div>
+
+			<div id-"crimeData">Number of Crimes in the Area: <span id="crimeInfo"></span></div>
 			
 		</div>
 

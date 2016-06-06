@@ -12,9 +12,7 @@
     makeDelphiChart(data);
   });
 
-})(d3);  
-
-
+})(d3);
 
 makeDelphiChart = function(data) {
 
@@ -25,8 +23,6 @@ var margin = {top: 20, right: 10, bottom: 100, left: 80},
 
   var rating = d3.max( data.map(function(d){ return d.community_occurence; }) );
   var innerHeight = rating/6 - margin.top  - margin.bottom;
-
-
 
   var xScale = d3.scale.ordinal().rangeRoundBands([0, innerWidth+1], .1);
   var yScale = d3.scale.linear().range([innerHeight, 0]);
@@ -53,8 +49,6 @@ var margin = {top: 20, right: 10, bottom: 100, left: 80},
         return rating;
     })]);
 
-
-
   chart.call(tip);
 
   var node = chart
@@ -69,13 +63,14 @@ var margin = {top: 20, right: 10, bottom: 100, left: 80},
     return innerHeight - d*(innerHeight/rating); })
     .attr("height", function(d) { return innerHeight*d/rating;  })
     .on("click", function(d) {
-           if (d3.select(this).style("fill") != "#F3B529") {
-                d3.select(this).style("fill", "#F3B529");
-            }
-            else {
-                d3.select(this).style("fill", "#278FC2");
-            }
-          })
+          d3.selectAll(".bar").style("fill", "#278FC2");
+          d3.select(this).style("fill", "#F3B529");
+
+         printCrimeInfo(d); 
+      })
+    .on("dblclick", function(d) {
+        d3.select(this).style("fill", "#278FC2");
+      })
     .on("mouseover",tip.show)
     .on("mouseout", tip.hide)
     ;
@@ -103,3 +98,8 @@ var margin = {top: 20, right: 10, bottom: 100, left: 80},
 
 
 };
+
+function printCrimeInfo(data) {
+  console.log(data);
+  $('#crimeInfo').text(data);
+}

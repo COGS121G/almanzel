@@ -1,6 +1,16 @@
 (function(d3) {
   "use strict";
 
+  var adults = $("#mapdiv").attr("data-adults");
+  var child = $("#mapdiv").attr("data-children");
+  var inc = $("#mapdiv").attr("data-income");
+  var race = $("#mapdiv").attr("data-race");
+  var trans = $("#mapdiv").attr("data-transportation");
+  console.log("adults" + adults);
+  console.log("child" + child);
+  console.log("inc" + inc);
+  console.log("race" + race);
+  console.log("trans" + trans);
   var communityData = d3.json("/communities", function(err, data) {
     if (err) {
       console.log(err);
@@ -59,6 +69,7 @@ function makeMap(data) {
       .attr("id", function(d){return d.properties.NAME; } )
       .attr("class", "map_piece")
       .on("click", function(d) {
+         printInfo(d.properties.NAME, data);
         $('html,body').animate({
             scrollTop: $(".locationInfo").offset().top},
                 'slow');
@@ -109,10 +120,6 @@ function mapColor(name, data, max) {
     if( data[i].community == name ) {
       return color(data[i].total/max);
     }
-//    else {
-  //    console.log("data "+data[i].community)
-    //  console.log("name " +name)
-  //  }
   }
 
   return "grey ";
@@ -125,7 +132,7 @@ function printInfo(name, data) {
       //$('.communityName').css('display', 'none');
       $('#communityInfo').css('display', 'block');
       $('.communityName').text(name);
-      $('#crimeInfo').text(data[i].total);
+      $('#commInfo').text(data[i].total);
     }
   }
 }
