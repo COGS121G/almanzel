@@ -69,10 +69,12 @@ $(function() {
     	if (current==1){
     		$('#backButton').hide();
     		$('#nextButton').hide();
+    		$('#submitButton').hide();
     		console.log("1");
     	}else if(current >= 2 && current <=4){
     		$('#backButton').show();
     		$('#nextButton').show();
+    		$('#submitButton').hide();
     		console.log("2-4");
     	}else{
     		$('#backButton').show();
