@@ -8,6 +8,7 @@
     <title>Home Page</title>
 
     <link rel="stylesheet" type="text/css" href="index.css">
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet"> 
 
@@ -32,32 +33,53 @@
 	<!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->  
     <header>
-        <div class="row" >
-            <div class="col-md-4" id="title">
-                <img src="./img/logo.png" style="width: 100px; height: 100px; margin: 15px;">
-            </div>
-            <div class="col-md-8">
+    <div class="row" id = "nav" style="height:60px;">
+        <div class="col-md-4" id="title">
+            <img onClick="toTop()" src="./img/logo.png" style="width: 40px; height: 40px; margin-left: 15px;">
+            Al Manzel
 
-                <!-- The overlay -->
-                <div id="myNav" class="overlay">
-
-                    <!-- Button to close the overlay navigation -->
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-                    <!-- Overlay content -->
-                    <div class="overlay-content" id="helpInfo">
-                    <b>Al Manzel</b> means <b>home</b> in Arabic.
-                    </br>
-                    We aim to help refugees and immigrants find a new home in San Diego.</br>
-                    Using factors such as housing cost, language, culture, </br>education, and age range, we help you and your family </br>have the best chance to succeed in San Diego.
-                    </div>
-                </div>
-                <div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right:2%; margin-top: 15px">
-                    <button onclick="openNav()" type="button" id="helpBtn" class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
-                </div>
-            </div>    
+            <script>
+            function toTop() {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+            }
+            </script>
         </div>
-    </header>
+        <div class="col-md-8">
+          <!--<div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right:2%; margin-top: 15px">
+            <button type="button" id="helpBtn" class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>-->
+            <!-- The overlay -->
+            <div id="myNav" class="overlay">
+
+              <!-- Button to close the overlay navigation -->
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+              <!-- Overlay content -->
+              <div class="overlay-content" id="helpInfo">
+                <b>Al Manzel</b> means <b>home</b> in Arabic.
+                </br>
+                We aim to help refugees and immigrants find a new home in San Diego.</br>
+                Using factors such as housing cost, language, culture, </br>education, and age range, we help you and your family </br>have the best chance to succeed in San Diego. 
+
+              </div>
+
+            </div>
+
+            <!-- Use any element to open/show the overlay navigation menu -->
+            <!--<span onclick="openNav()">open</span>-->
+
+
+            <div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right: 2%; margin-top: 7px">
+                <button onclick="openNav()" type="button" id="helpBtn" class="btn btn-secondary" data-toggle="modal" data-target="#help">Help</button>
+            </div>
+         </div>
+    </div>
+</header>
+
+    <div class="spacer">
+        &nbsp;
+    </div>
+    
+
     <div class="col-md-3">
     </div>
     <div class="col-md-6">
@@ -68,14 +90,14 @@
                     <fieldset class="step">
                         </br>
                         <h3>Welcome to San Diego! <br></br>
-                            Al Manzel is a tool that helps you choose<br>
+                            <b><i>Al Manzel</i></b> is a tool that helps you find<br>
                             the best location for you and your family<br>
                             to set up your new home!</br>
                         </h3>
-                        <a id="tellUs" class="btn btn-dark btn-lg" style="background-color:black">Tell us about your family</a> <br> <br>
+                        <a id="tellUs" class="btn btn-dark btn-lg" style="background-color:black">Get Started</a> <br> <br>
                     </fieldset>
                     <fieldset class="step">
-                        <p >To determine what type of house suites you and your family, please tells us:</p>
+                        <p >Please answer a few questions to help us determine what kind of neighborhood suits you and your family.</p>
 
                         <h3>How big is your family?</h3>
                         <select class="formAdult input-lg" name="adults">
@@ -85,6 +107,7 @@
                           <option>3 Adult</option>
                           <option>4 Adult</option>
                           <option>5+ Adults</option>
+                          <option>Prefer not to answer</option>
                         </select>
                         <select class="formChild input-lg" name="children">
                           <option>0 Child</option>
@@ -93,12 +116,14 @@
                           <option>3 Children</option>
                           <option>4 Children</option>
                           <option>5+ Children</option>
+                          <option>Prefer not to answer</option>
                         </select>
                         </br>
                         </br>
+
                     </fieldset>
                     <fieldset class="step">
-                        <p>To help us match you to an affordable neighborhood please tell us:<p> 
+                        <p>This question helps us match you to an affordable neighborhood.<p> 
                         <h3>What is your family's expected income?</h3>
                         <select class="ExpectedIncome input-lg" name="income">
                           <option>0K - 15K</option>
@@ -107,11 +132,12 @@
                           <option>50K - 70K</option>
                           <option>70K - 90K</option>
                           <option>90k+</option>
+                          <option>Prefer not to answer</option>
                         </select>
                         </br>
                     </fieldset>
                     <fieldset class="step">
-                        <p>We try to match newly incoming immigrants to neighborhoods of similar race. Feel free to skip that question if that is not something you are concerned about.<p>
+                        <p>We try to match newly incoming immigrants to neighborhoods of similar race. Feel free to skip this question if this is not something you are concerned about.<p>
 
                         <h3>What is your race?</h3>
                         <select class="race input-lg" name="race">
@@ -121,26 +147,23 @@
                           <option>White</option>
                           <option>Black</option>
                           <option>Hispanic</option>
+                          <option>Prefer not to answer</option>
                         </select>
                         </br>
                         </br>
                     </fieldset>
                     <fieldset class="step">
-                        <p>Public transportation is more accessible in some neighborhoods rather than others. To help us find you the right neighborhood, please tell us:<p>
+                        <p>Public transportation is more accessible in some neighborhoods rather than others.<p>
 
                         <h3>What will be your mode of transportation?</h3>
                         <select class="transportation input-lg" name="transportation">
                           <option>Car</option>
                           <option>Public Transport</option>
+                          <option>Prefer not to answer</option>
                         </select>
                         </br>
-                    </fieldset>
-                    <fieldset class="step">
-                        <p>
-                            Submit query
-                        </p>
                         <p class="submit">
-                            <button id="registerButton" type="submit">Submit</button>
+                            <button id="submitButton" type="submit" style="display:none">Submit</button>
                         </p>
                     </fieldset>
                 </form>
@@ -149,10 +172,10 @@
             <div id="navigation2" style="">
                 <ul>
                     <li class="selected">
-                        <a id ="backButton" style="display:none">Back</a>
+                        <button id ="backButton" style="display:none">Back</button>
                     </li>
                     <li>
-                        <a id ="nextButton" style="display:none">Next</a>
+                        <button id ="nextButton" style="display:none">Next</button>
                     </li>
                 </ul>
             </div>

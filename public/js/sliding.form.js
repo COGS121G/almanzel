@@ -69,14 +69,17 @@ $(function() {
     	if (current==1){
     		$('#backButton').hide();
     		$('#nextButton').hide();
+    		$('#submitButton').hide();
     		console.log("1");
-    	}else if(current >= 2 && current <=5){
+    	}else if(current >= 2 && current <=4){
     		$('#backButton').show();
     		$('#nextButton').show();
+    		$('#submitButton').hide();
     		console.log("2-4");
     	}else{
     		$('#backButton').show();
     		$('#nextButton').hide();
+    		$('#submitButton').show();
     		console.log("5");
     	}
     }
@@ -90,7 +93,7 @@ $(function() {
 		$this.closest('ul').find('li').removeClass('selected');
         $this.parent().addClass('selected');
 
-        if (current>=1 && current<6){
+        if (current>=1 && current<5){
         	current++;
         }
 
@@ -116,7 +119,7 @@ $(function() {
 		$this.closest('ul').find('li').removeClass('selected');
         $this.parent().addClass('selected');
 
-        if (current>1 && current<=6){
+        if (current>1 && current<=5){
         	current--;
         }
 

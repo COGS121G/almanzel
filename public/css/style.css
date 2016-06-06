@@ -6,8 +6,17 @@ body{
     color:#444444;
     font-size:13px;
     background: #f2f2f2;
-    font-family:"Century Gothic", Helvetica, sans-serif;
+
 }
+
+#title{
+  color: #fff;
+  font-family: 'Cherry Swash', cursive;
+  font-size: 40px;
+}
+
+
+
 #content{
     margin:15px auto;
     text-align:center;
@@ -146,18 +155,9 @@ span.error{
 #steps form input:not([type=radio]),
 #steps form textarea,
 #steps form select{
-    left: 50%;
+    
     text-align: center;
-    transform: translate(50%, 0);
-    background: #ffffff;
-    border: 1px solid #ddd;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    outline: none;
-    padding: 5px;
-    width: 200px;
-    float:left;
+
 }
 #steps form input:focus{
     -moz-box-shadow:0px 0px 3px #aaa;
@@ -179,17 +179,72 @@ span.error{
     -webkit-border-radius: 10px;
     border-radius: 10px;
     color: #ffffff;
+    display: inline;
+    cursor:pointer;
+    margin: 0px auto;
+    clear:both;
+    padding: 7px 25px;
+    font-family: Roboto;
+    font-size:22px;
+    background:#666699;
+
+}
+#steps form button:hover {
+    background:#d8d8d8;
+    color:#666;
+}
+
+#navigation2 *{
+    display: inline;
+}
+#navigation2 a{
+    border:none;
+    outline:none;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    color: #ffffff;
     display: block;
     cursor:pointer;
     margin: 0px auto;
     clear:both;
     padding: 7px 25px;
-    font-weight:bold;
-    font-family:"Century Gothic", Helvetica, sans-serif;
+    
+    
     font-size:22px;
-    background:#4797ED;
+    background:#278FC2;
+} 
+
+#navigation2 button{
+    border:none;
+    outline:none;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    display: block;
+    cursor:pointer;
+    margin: 0px auto;
+    clear:both;
+    padding: 7px 25px;
+    
+    
+    font-size:22px;
+    background:#278FC2;
 }
-#steps form button:hover {
-    background:#d8d8d8;
-    color:#666;
+#backButton{
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    display:none; 
+    background-color: #278FC2;
+}
+
+#nextButton{
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+
+    display:none; 
+    background-color: #278FC2;
 }
