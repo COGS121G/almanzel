@@ -6,11 +6,7 @@
   var inc = $("#mapdiv").attr("data-income");
   var race = $("#mapdiv").attr("data-race");
   var trans = $("#mapdiv").attr("data-transportation");
-  console.log("adults" + adults);
-  console.log("child" + child);
-  console.log("inc" + inc);
-  console.log("race" + race);
-  console.log("trans" + trans);
+
   var communityData = d3.json("/communities", function(err, data) {
     if (err) {
       console.log(err);

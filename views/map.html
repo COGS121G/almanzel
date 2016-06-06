@@ -80,45 +80,45 @@
 			<form>
 			</br>
 		      <p><label for="adults">Number of Adults</label></br>
-			  <select name="adults" class="input-lg" >
-				  <option>1 </option>
-				  <option>2 </option>
-				  <option>3 </option>
-				  <option>4 </option>
-				  <option>5+ </option>
+			  <select name="adults" id="adults" class="input-lg" >
+				  <option value="1">1 </option>
+				  <option value="2">2 </option>
+				  <option value="3">3 </option>
+				  <option value="4">4 </option>
+				  <option value="5">5+ </option>
 			  </select></p>
 
 			  <p><label for="children">Number of Children</label></br>
-			  <select name="children" class="input-lg" >
-				  <option>1 </option>
-				  <option>2 </option>
-				  <option>3 </option>
-				  <option>4 </option>
-				  <option>5+ </option>
+			  <select name="children" id="children" class="input-lg" >
+				  <option value="1">1 </option>
+				  <option value="2">2 </option>
+				  <option value="3">3 </option>
+				  <option value="4">4 </option>
+				  <option value="5">5+ </option>
 			  </select></p>
 
 			  <p><label for="income">Expected Income</label></br>
-			  <select name="income" class="input-lg" >
-				  <option>15K - 30K</option>
-				  <option>30K - 50K</option>
-				  <option>50K - 70K</option>
-				  <option>70K - 90K</option>
-				  <option>90k+</option>
+			  <select name="income" id="income" class="input-lg" >
+				  <option value="15">15K - 30K</option>
+				  <option value="30">30K - 50K</option>
+				  <option value="50">50K - 70K</option>
+				  <option value="70">70K - 90K</option>
+				  <option value="90">90k+</option>
 			  </select></p>
 
 			  <p><label for="race">Race</label></br>
-			  <select name="race" class="input-lg" >
-				  <option>Middle Eastern</option>
-				  <option>Asian</option>
-				  <option>White</option>
-				  <option>African American</option>
-				  <option>Hispanic</option>
+			  <select name="race" id="race"class="input-lg" >
+				  <option value="Middle Eastern">Middle Eastern</option>
+				  <option value="Asian">Asian</option>
+				  <option value="White">White</option>
+				  <option value="African American">African American</option>
+				  <option value="Hispanic">Hispanic</option>
 			  </select></p>
 
 			  <p><label for="transportation">Transportation</label></br>
-			  <select name="transportation" class="input-lg" >
-				  <option>Car</option>
-				  <option>Public Transport</option>
+			  <select name="transportation" id="transportation" class="input-lg" >
+				  <option value="Car">Car</option>
+				  <option value="Public Transport">Public Transport</option>
 			  </select></br></p>
 
 			  <input type="submit" value="Update" id="updateBtn" class="btn btn-secondary">
@@ -292,6 +292,23 @@
   <script src="./js/index.js"></script>
   <script src="./js/custom.js"></script>
   <script src="./js/index2.js"></script>
+  <script>
+  var adults = $("#mapdiv").attr("data-adults");
+  var child = $("#mapdiv").attr("data-children");
+  var inc = $("#mapdiv").attr("data-income");
+  var race = $("#mapdiv").attr("data-race");
+  var trans = $("#mapdiv").attr("data-transportation");
+  console.log(adults)
+  
+  var aStr = adults.substring(0, 1);
+  var cStr = child.substring(0, 1);
+  var iStr = inc.substring(0, 2);
+  $("#adults").val(aStr);
+  $("#children").val(cStr);
+  $("#income").val(iStr);
+  $("#race").val(race);
+  $("#trans").val(trans);
+  </script>
 </body>
 
 </html> 
