@@ -215,6 +215,23 @@ span.error{
     background:#278FC2;
 } 
 
+#navigation2 button{
+    border:none;
+    outline:none;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    display: block;
+    cursor:pointer;
+    margin: 0px auto;
+    clear:both;
+    padding: 7px 25px;
+    
+    
+    font-size:22px;
+    background:#278FC2;
+}
 #backButton{
     position: absolute;
     bottom: 8px;
