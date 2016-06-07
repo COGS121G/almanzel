@@ -12,11 +12,19 @@
 }
 
 #nav{
-  background-color: #4797ED;
+  background-color: black;
   position: fixed;
   margin: 0;
   width:100%;
   z-index: 100;
+}
+
+#logo{
+    margin-top: 3px;
+    vertical-align:top; 
+    width: 40px; 
+    height: 40px; 
+    margin-left: 15px;
 }
 
 .transbox {
