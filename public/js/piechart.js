@@ -38,7 +38,7 @@ function markerOnClickPieChart(e) {
                 "sortOrder": "label-desc",
                 "content": [
                     {
-                        "label": "Households with income <$15K",
+                        "label": "<$15K",
                         "value": first["Households with income <$15K"],
                         "color": "#2383c1"
                     },
