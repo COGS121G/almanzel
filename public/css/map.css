@@ -17,8 +17,9 @@ body {
 }
 
 .col-md-3 label{
-  color:#30373C;;
-  font-size: 20px;
+  color: black;
+  font-size: 15px;
+
 }
 .col-md-3 h4{
 	text-align: center;
@@ -26,7 +27,14 @@ body {
 
 .col-md-3 select{
 	display: block;
-    width: 200px
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+.col-md-3{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #mapoverlay {
@@ -46,7 +54,7 @@ body {
 }
 
 #updateBtn{
-	background-color: #5d676f;
+	background-color: #27c2a8;
 	display: block;
   margin-left: auto;
   margin-right: auto;
@@ -212,7 +220,7 @@ body {
 
 #mapdiv {
    display: inline-block;
-   height:90% !important;
+   height: 90% !important;
 }
 
 #dynamicSection {
@@ -247,7 +255,17 @@ body {
 
 #comms {
   width: 90%;
+  height: 300px !important;
   background-color: white;
   border-style: solid;
   border-color: #f9f9f9;
+}
+
+.communityName {
+  font-size: 30px;
+  font-style: italic;
+}
+#infoTextA {
+  padding: 10px;
+  font-size: 20px;
 }
