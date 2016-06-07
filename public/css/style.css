@@ -23,6 +23,8 @@ body{
     width:600px;
     position:relative;
     height:100%;
+    top: 50%;
+    transform: translateY(40%);
 }
 #wrapper{
     -moz-border-radius:10px;
