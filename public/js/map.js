@@ -174,7 +174,7 @@ function printInfo(name, data) {
       }
 
       if(name == "CARLSBAD"){
-        $('#locSummary').text("Carlsbad is a seaside resort city occupying a 7-mile (11 km) stretch of Pacific coastline in northern San Diego County, California. The city is 87 miles (140 km) south of Los Angeles and 35 miles (56 km) north of downtown San Diego and is part of the San Diego-Carlsbad, CA Metropolitan Statistical Area. Referred to as The Village by the Sea by locals, the city is a tourist destination. The city's estimated 2014 population was 112,299.");
+        $('#locSummary').text("Carlsbad is a seaside resort city occupying a 7-mile (11 km) stretch of Pacific coastline in northern San Diego County, California. The city is 87 miles (140 km) south of Los Angeles and 35 miles (56 km) north of downtown San Diego. Referred to as The Village by the Sea by locals, the city is a tourist destination.");
         $('#infoImg').attr("src", "https://activerain-store.s3.amazonaws.com/image_store/uploads/1/2/0/7/3/ar132614854837021.jpg");
         altOnClick('Carlsbad');
       }
@@ -204,7 +204,7 @@ function printInfo(name, data) {
       }
 
       if(name == "LAKESIDE"){
-        $('#locSummary').text("Lakeside has long held a reputation as a cowboy town and rodeo town, due to the rural setting, the prevalence of ranches and the abundant horse ownership in the area, as well as hosting a permanent rodeo facility, the Lakeside Rodeo Grounds. There are a number of parks with outdoor trails for hiking, biking and equestrian riding. Also located in Lakeside is the trailhead for the climb to the summit of El Cajon Mountain, nicknamed locally as El Capitan for its resemblance to the famous Yosemite cliff, which dominates the view of the mountains northeast of Lakeside.");
+        $('#locSummary').text("Lakeside has long held a reputation as a cowboy town and rodeo town, due to the rural setting, the prevalence of ranches and the abundant horse ownership in the area, as well as hosting a permanent rodeo facility, the Lakeside Rodeo Grounds. There are a number of parks with outdoor trails for hiking, biking and equestrian riding.");
         $('#infoImg').attr("src", "http://psomas.com/wp-content/uploads/2013/07/fac-recpark_Lakeside-Sports-Center.jpg");
         altOnClick('Lakeside');
       }
