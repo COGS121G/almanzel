@@ -110,7 +110,7 @@ function makeMap(data) {
 function mapColor(name, data, max) {
   var color = d3.scale.linear()
   .domain([0, .02, .2])
-  .range(["darkgreen", "green", "red"]);
+  .range(["green", "red"]);
 
   for(var i in data) {
     if( data[i].community == name ) {

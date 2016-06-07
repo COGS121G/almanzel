@@ -186,8 +186,6 @@ span.error{
     padding: 7px 25px;
     font-family: Roboto;
     font-size:22px;
-    background:#666699;
-
 }
 #steps form button:hover {
     background:#d8d8d8;
@@ -227,10 +225,7 @@ span.error{
     margin: 0px auto;
     clear:both;
     padding: 7px 25px;
-    
-    
     font-size:22px;
-    background:#278FC2;
 }
 #backButton{
     position: absolute;
@@ -247,4 +242,13 @@ span.error{
 
     display:none; 
     background-color: #278FC2;
+}
+
+#submitButton{
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+
+    display:none; 
+    background-color: #d47600;
 }
