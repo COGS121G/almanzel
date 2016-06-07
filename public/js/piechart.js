@@ -43,37 +43,37 @@ function markerOnClickPieChart(e) {
                         "color": "#2383c1"
                     },
                     {
-                        "label": "Households with income $15k-$35k",
+                        "label": "$15k-$35k",
                         "value": first["Households with income $15k-$35k"],
                         "color": "#64a61f"
                     },
                     {
-                        "label": "Households with income$35k-$50k",
+                        "label": "$35k-$50k",
                         "value": first["Households with income$35k-$50k"],
                         "color": "#7b6788"
                     },
                     {
-                        "label": "Households with income $50k-$75k",
+                        "label": "$50k-$75k",
                         "value": first["Households with income $50k-$75k"],
                         "color": "#a05c56"
                     },
                     {
-                        "label": "Households with income $75k-$100k",
+                        "label": "$75k-$100k",
                         "value": first["Households with income $75k-$100k"],
                         "color": "#961919"
                     },
                     {
-                        "label": "Households with income $100k-$150k",
+                        "label": "$100k-$150k",
                         "value": first["Households with income $100k-$150k"],
                         "color": "#a7b36d"
                     },
                     {
-                        "label": "Households with income $150k-$200k",
+                        "label": "$150k-$200k",
                         "value": first["Households with income $150k-$200k"],
                         "color": "#e98125"
                     },
                     {
-                        "label": "Households with income >$200k",
+                        "label": ">$200k",
                         "value": first["Households with income >$200k"],
                         "color": "#e98125"
                     }
