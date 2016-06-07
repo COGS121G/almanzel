@@ -12,8 +12,8 @@
 }
 
 .col-md-3 label{
-  color: white;
-  font-size: 20px;
+  color: black;
+  font-size: 15px;
 
 }
 .col-md-3 h4{
@@ -24,7 +24,12 @@
 	display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 200px
+    width: 200px;
+}
+
+.col-md-3{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #helpBtn{
@@ -38,12 +43,16 @@
 }
 
 #updateBtn{
-	background-color: #5d676f;
+	background-color: #27c2a8;
 	display: block;
   margin-left: auto;
   margin-right: auto;
   color: white;
   font-size: 20px;
+}
+
+#infoTextA{
+  width: 80%;
 }
 
 #filter{
@@ -110,10 +119,19 @@
 
 
 .locationInfo {
-  background-color: #d3d3d3;
+  background-color: #1e7098;
+  color: white;
   padding-bottom: 30px;
 }
 
+#locName{
+  color: #fed100;
+
+}
+
+#infoTextA{
+  font-size: 70%;
+}
 
 
 
