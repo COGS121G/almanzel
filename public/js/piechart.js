@@ -12,7 +12,7 @@ function markerOnClickPieChart(e) {
             "header": {
                 "title": {
                     "text": "Income Distribution in 2012 ",
-                    "fontSize": 50,
+                    "fontSize": 30,
                     "font": "Roboto"
                 },
                 "subtitle": {
