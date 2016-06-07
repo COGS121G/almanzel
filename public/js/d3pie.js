@@ -61,7 +61,7 @@ var defaultSettings = {
 		location: "left"
 	},
 	size: {
-		canvasHeight: 500,
+		canvasHeight: 550,
 		canvasWidth: 500,
 		pieInnerRadius: "0%",
 		pieOuterRadius: null
@@ -95,18 +95,18 @@ var defaultSettings = {
 		mainLabel: {
 			color: "#333333",
 			font: "arial",
-			fontSize: 10
+			fontSize: 20
 		},
 		percentage: {
 			color: "#dddddd",
 			font: "arial",
-			fontSize: 10,
+			fontSize: 12,
 			decimalPlaces: 0
 		},
 		value: {
 			color: "#cccc44",
 			font: "arial",
-			fontSize: 10
+			fontSize: 20
 		},
 		lines: {
 			enabled: true,
@@ -685,7 +685,7 @@ var math = {
 		return data;
 	},
 
-	
+
 
 	// var pieCenter = math.getPieCenter();
 	getPieTranslateCenter: function(pieCenter) {

@@ -15,9 +15,12 @@ body {
     width: 100%;
     height: 60px;
 }
+label {
+  color: white;
+}
 
+/*
 .col-md-3 label{
-  color: black;
   font-size: 15px;
 
 }
@@ -35,12 +38,19 @@ body {
 .col-md-3{
     margin-left: auto;
     margin-right: auto;
-}
+}*/
 
 #mapoverlay {
  position: absolute;
- top: 75%;
- left: 3%;
+ top: 70%;
+ left: 5%;
+ width: 120px;
+ padding-top: 15px;
+ padding-left: 20px;
+ padding-bottom: 20px;
+ border-radius: 5px;
+ background-color: rgba(22, 26, 29, 0.5);
+ border-radius: 10px;
 }
 
 #helpBtn{
@@ -62,9 +72,22 @@ body {
   font-size: 20px;
 }
 
+/*
 #filter{
 	padding-bottom: 20px;
   color: black;
+}*/
+
+#filter {
+   position: absolute;
+   top: 10%;
+   left: 5%;
+   background-color: rgba(22, 26, 29, 0.5);
+   padding-top: 15px;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-bottom: 20px;
+   border-radius: 10px;
 }
 
 .d3-tip {
@@ -194,24 +217,21 @@ body {
 #pieChart {
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: white;
-  border-style: solid;
-  border-color: #f9f9f9;
+  background-color: #FAFAFA;
 }
 
 #chart {
     margin: 10px;
-    background-color: white;
+    background-color: #FAFAFA;
     display: inline-block !important;
-
 }
 
 #mapSection {
-  background-color: white !important;
-  height: 100% !important;
+  margin-top: 0;
+  padding-top: 0;
+  height: 96% !important;
+  width: 100% !important;
   padding: 10px !important;
-  border-style: solid;
-  border-color: #f9f9f9;
 }
 
 #mapRow {
@@ -219,13 +239,18 @@ body {
 }
 
 #mapdiv {
-   display: inline-block;
-   height: 90% !important;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  height: 96% !important;
+  width: 100% !important;
+  position: relative;
 }
 
 #dynamicSection {
   padding-top: 30px;
   padding-bottom: 30px;
+  height: 80%;
 }
 
 #graphSection {
@@ -233,39 +258,60 @@ body {
 }
 
 .chartText {
-  font-size: 28px;
+  font-size: 50px;
 }
 
 .section {
   margin:0;
-  background-color: lightgrey;
+  margin-bottom: 100px;
+  background-color: white;
 }
 
 .sectionTitle {
+  text-align: center;
   margin: 0 !important;
-  font-size: 30px;
+  font-size: 60px;
   font-weight: bold;
 }
 
 .sectionDesc {
+  text-align: center;
   padding-top: 5px;
-  font-size: 19px;
+  font-size: 30px;
   padding-bottom: 20px;
 }
 
 #comms {
-  width: 90%;
+  width: 97%;
   height: 300px !important;
   background-color: white;
-  border-style: solid;
-  border-color: #f9f9f9;
 }
 
 .communityName {
-  font-size: 30px;
+  text-align: center;
+  font-size: 50px;
   font-style: italic;
 }
+
 #infoTextA {
-  padding: 10px;
-  font-size: 20px;
+  font: Roboto sans-serif;
+  font-size: 25px;
+}
+
+#infoCol {
+  padding-left: 70px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  height:400px !important;
+}
+
+#imgCol {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#infoImg {
+  height: 400px !important;
+  width: 700px !important;
 }

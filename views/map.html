@@ -12,6 +12,7 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
    <style>
     #map{ height: 100% }
@@ -67,12 +68,79 @@
 
 
 
-<body>
+<body style="font-family: Roboto;">
 	<div class="spacer">
     	&nbsp;
 	</div>
 	<div id="mapSection" class="section">
-		<div id="mapRow" class="row">
+
+			<div id="mapdiv"
+			data-adults="{{adults}}" data-children="{{children}}" data-income="{{income}}" data-race="{{race}}" data-transportation="{{transportation}}">
+				<div id="map"></div>
+				<div id="mapoverlay"></div>
+			</div>
+
+			<div id="filter" >
+			      <center>
+				<form>
+				</br>
+			      <p><label for="adults">Number of Adults</label></br>
+				  <select name="adults" id="adults"class="input-lg" >
+					  <option value="0 Adults">0 Adults</option>
+	                  <option value="1 Adults">1 Adult</option>
+	                  <option value="2 Adults">2 Adults</option>
+	                  <option value="3 Adults">3 Adults</option>
+	                  <option value="4 Adults">4 Adults</option>
+	                  <option value="5+ Adults">5+ Adults</option>
+	                  <option value="Prefer not to answer">Prefer not to answer</option>
+				  </select></p>
+
+				  <p><label for="children">Number of Children</label></br>
+				  <select name="children" id="children"class="input-lg" >
+					  <option value="0 Children">0 Children</option>
+	                  <option value="1 Child">1 Child</option>
+	                  <option value="2 Children">2 Children</option>
+	                  <option value="3 Children">3 Children</option>
+	                  <option value="4 Children">4 Children</option>
+	                  <option value="5+ Children">5+ Children</option>
+	                  <option value="Prefer not to answer">Prefer not to answer</option>
+				  </select></p>
+
+				  <p><label for="income">Expected Income</label></br>
+				  <select name="income" id="income"class="input-lg" >
+					  <option value="0K - 15K">0K - 15K</option>
+	                  <option value="15K - 30K">15K - 30K</option>
+	                  <option value="30K - 50K">30K - 50K</option>
+	                  <option value="50K - 70K">50K - 70K</option>
+	                  <option value="70K - 90K">70K - 90K</option>
+	                  <option value="90k+">90k+</option>
+	                  <option value="Prefer not to answer">Prefer not to answer</option>
+				  </select></p>
+
+				  <p><label for="race">Race</label></br>
+				  <select name="race" id="race"class="input-lg" >
+					  <option value="Middle Eastern">Middle Eastern</option>
+	                  <option value="Asian">Asian</option>
+	                  <option value="White">White</option>
+	                  <option value="Black">Black</option>
+	                  <option value="Hispanic">Hispanic</option>
+	                  <option value="Prefer not to answer">Prefer not to answer</option>
+				  </select></p>
+
+				  <p><label for="transportation">Transportation</label></br>
+				  <select name="transportation" id="transportation" class="input-lg" >
+					  <option id="Car">Car</option>
+					  <option id="Public Transport">Public Transport</option>
+					  <option id="Prefer not to answer">Prefer not to answer</option>
+				  </select></br></p>
+
+				  <input type="submit" value="Update" id="updateBtn" class="btn btn-secondary">
+				</form>
+			</center>
+			</div>
+
+
+		<!-- <div id="mapRow" class="row">
 			<div class="col-md-3" id="filter" >
 			      <center>
 				<form>
@@ -138,27 +206,38 @@
 				<div id="mapoverlay"></div>
 			</div>
 
-		</div>
+		</div> -->
 	</div>
 
 
 	<div id="dynamicSection" class="section">
 		<center>
 				<h3 id="locationInfo" class="sectionTitle">Community Info</h3>
+				<br>
 				<p class="sectionDesc">Analyze and compare communities</p>
-			<div id="comms">
-				<div class="communityName" id="locName">El Cajon</div>
-				<div id="infoTextA"> <span id="locSummary">El Cajon is a city in San Diego County, California, United States. Nestled in a valley surrounded by mountains, the city has acquired the nickname of "The Big Box."</span></div>
-			</div>
 		</center>
+		<br>
+			<div id="comms" class="row">
+				<div id="infoCol" class="col-xs-6">
+					<div class="communityName" id="locName">El Cajon</div>
+					<br>
+					<div id="infoTextA"> <span id="locSummary">El Cajon is a city in San Diego County, California, United States. Nestled in a valley surrounded by mountains, the city has acquired the nickname of "The Big Box."</span></div>
+				</div>
+				<div id="imgCol" class="col-xs-6">
+					<center>
+						<img id="infoImg" src="http://s3-media4.fl.yelpcdn.com/bphoto/thN0eL4eF2KwtZ9tnH9L_A/o.jpg"></img>
+					</center>
+				</div>
+			</div>
 	</div>
 
 
 	<div id="graphSection" class="section">
 		<center>
 			<h3 class="sectionTitle"> Relevant Information</h3>
+			<br>
 			<p class="sectionDesc">Find out more about the San Diego Communities</p>
-		</center>
+		<br>
 		<div class="row" id="graphRow">
 			<div class="col-xs-6">
 				<center>
@@ -177,13 +256,13 @@
 							"header": {
 								"title": {
 									"text": "Current Income Distribution",
-									"fontSize": 22,
-									"font": "verdana"
+									"fontSize": 50,
+									"font": "Roboto"
 								},
 								"subtitle": {
 									"color": "#999999",
 									"fontSize": 10,
-									"font": "verdana"
+									"font": "Roboto"
 								},
 								"titleSubtitlePadding": 12
 							},
@@ -285,7 +364,7 @@
 				</div>
 			</div>
 		</div>
-
+	</center>
 	</div>
 
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>

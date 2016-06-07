@@ -22,7 +22,7 @@ var margin = {top: 20, right: 10, bottom: 100, left: 80},
   var innerWidth  = width  - margin.left - margin.right;
 
   var rating = d3.max( data.map(function(d){ return d.community_occurence; }) );
-  var innerHeight = 466 - margin.top  - margin.bottom;
+  var innerHeight = 479 - margin.top  - margin.bottom;
 
   var xScale = d3.scale.ordinal().rangeRoundBands([0, innerWidth+1], .1);
   var yScale = d3.scale.linear().range([innerHeight, 0]);
