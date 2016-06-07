@@ -21,9 +21,9 @@ label {
 
 #logo{
   margin-top: 3px;
-  vertical-align:top; 
-  width: 40px; 
-  height: 40px; 
+  vertical-align:top;
+  width: 40px;
+  height: 40px;
   margin-left: 15px;
 }
 
@@ -51,7 +51,7 @@ label {
 #mapoverlay {
  position: absolute;
  top: 70%;
- left: 5%;
+ left: 93%;
  width: 120px;
  padding-top: 15px;
  padding-left: 20px;
@@ -223,15 +223,15 @@ label {
 }
 
 #pieChart {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 1em;
+  margin-bottom: 1em;
   background-color: #FAFAFA;
 }
 
 #chart {
     margin: 10px;
     background-color: #FAFAFA;
-    display: inline-block !important;
+    display: block !important;
 }
 
 #mapSection {
@@ -239,7 +239,7 @@ label {
   padding-top: 0;
   height: 96% !important;
   width: 100% !important;
-  padding: 10px !important;
+  padding: 1em !important;
 }
 
 #mapRow {
@@ -256,70 +256,95 @@ label {
 }
 
 #dynamicSection {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 3em;
+  padding-bottom: 3em;
   height: 80%;
 }
 
 #graphSection {
   padding: 20px;
+  display: block;
 }
 
 .chartText {
-  font-size: 50px;
+  font-size: 3.5em;
 }
 
 .section {
   margin:0;
-  margin-bottom: 100px;
+  margin-bottom: 10em;
   background-color: white;
 }
 
 .sectionTitle {
   text-align: center;
   margin: 0 !important;
-  font-size: 60px;
+  font-size: 5em;
   font-weight: bold;
 }
 
 .sectionDesc {
   text-align: center;
-  padding-top: 5px;
-  font-size: 30px;
-  padding-bottom: 20px;
+  font-size: 2em;
+  padding-bottom: 1em;
 }
 
 #comms {
   width: 97%;
-  height: 300px !important;
   background-color: white;
 }
 
 .communityName {
   text-align: center;
-  font-size: 50px;
+  font-size: 4em;
   font-style: italic;
 }
 
 #infoTextA {
   font: Roboto sans-serif;
-  font-size: 25px;
+  font-size: 2em;
+  overflow-y: hidden;
+  word-wrap: break-word
+}
+
+#locSummary {
+  max-height:300px;
+  overflow-y: hidden;
+  word-wrap: break-word
 }
 
 #infoCol {
-  padding-left: 70px;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  height:400px !important;
+  padding-left: 7em;
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  height: 4em !important;
+  display: block;
 }
 
 #imgCol {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 #infoImg {
-  height: 400px !important;
-  width: 700px !important;
+  height: 35em !important;
+  width: 65em !important;
+}
+
+#crimeCol {
+  height: 40em;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    left: 0;
 }
