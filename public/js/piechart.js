@@ -5,6 +5,9 @@ function markerOnClickPieChart(e) {
             return item.Area == e;
         });
         var first = updateObject[0];
+
+        var offsetWidth = document.getElementById('chart').offsetWidth;
+
         var pie = new d3pie("pieChart", {
             "header": {
                 "title": {
@@ -28,7 +31,7 @@ function markerOnClickPieChart(e) {
               "location": "bottom-center"
             },
             "size": {
-              "canvasWidth": 800,
+              "canvasWidth": offsetWidth,
               "pieOuterRadius": "88%"
             },
             "data": {

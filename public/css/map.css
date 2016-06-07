@@ -2,7 +2,7 @@
   background-color: #278FC2;
   position: fixed;
   margin: 0;
-  width:100%;
+  width: 100%;
   z-index: 100;
 }
 
@@ -52,7 +52,7 @@ label {
  position: absolute;
  top: 70%;
  left: 93%;
- width: 120px;
+ width: 12em;
  padding-top: 15px;
  padding-left: 20px;
  padding-bottom: 20px;
@@ -225,6 +225,7 @@ label {
 #pieChart {
   margin-top: 1em;
   margin-bottom: 1em;
+  
   background-color: #FAFAFA;
 }
 
@@ -333,7 +334,12 @@ label {
 }
 
 #crimeCol {
-  height: 40em;
+  height: 50em;
+}
+
+#pieCol {
+  height: 55em !important;
+  display: inline-block;
 }
 
 .svg-container {

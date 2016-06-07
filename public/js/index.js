@@ -7,9 +7,6 @@
   var offsetWidth = document.getElementById('crimeCol').offsetWidth;
   var offsetHeight = document.getElementById('crimeCol').offsetHeight;
 
-    console.log(offsetWidth);
-    console.log(offsetHeight);
-
   d3.json("/delphidata", function(err, data) {
     if (err) {
       console.log(err);

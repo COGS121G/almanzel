@@ -247,7 +247,7 @@ function printInfo(name, data) {
 
       if(name == "JAMUL"){
         $('#locSummary').text("Jamul is one of several small rural or semi-rural communities in its surrounding area. It is still rural in character since it has no sewer system and imported water service only in the northwestern portion of the area. ");
-        $('#infoImg').attr("src", "http://pics4.city-data.com/cpic/ufiles1510.jpg");
+        $('#infoImg').attr("src", "http://www.townblip.com/images/images_jamul/Jamul_hills.jpg");
         altOnClick('Jamul');
 
       }
