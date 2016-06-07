@@ -13,7 +13,7 @@ var app = express();
 dotenv.load();
 //var models = require("./models");
 
-var router = { 
+var router = {
   index: require("./routes/index"),
   map: require("./routes/map")
 };
@@ -74,8 +74,8 @@ app.get('/delphidata', function (req, res) {
   // that will be displayed on the D3 visualization
   // Table: Smoking Prevalance in Adults
   // Task: In the year 2003, retrieve the total number of respondents
-  // for each gender. 
-  // Display that data using D3 with gender on the x-axis and 
+  // for each gender.
+  // Display that data using D3 with gender on the x-axis and
   // total respondents on the y-axis.
 
    pg.connect(conString, function(err, client, done) {

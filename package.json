@@ -6,6 +6,8 @@
   },
   "dependencies": {
     "body-parser": "1.12.2",
+    "d3": "^3.5.17",
+    "d3-svg-legend": "^1.10.0",
     "dotenv": "1.1.0",
     "express": "4.13.4",
     "express-handlebars": "1.2.2",

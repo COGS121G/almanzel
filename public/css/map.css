@@ -5,6 +5,11 @@
   width:100%;
   z-index: 100;
 }
+
+body {
+  background-color: lightgrey;
+}
+
 .spacer
 {
     width: 100%;
@@ -12,9 +17,8 @@
 }
 
 .col-md-3 label{
-  color: white;
+  color:#30373C;;
   font-size: 20px;
-
 }
 .col-md-3 h4{
 	text-align: center;
@@ -22,9 +26,13 @@
 
 .col-md-3 select{
 	display: block;
-    margin-left: auto;
-    margin-right: auto;
     width: 200px
+}
+
+#mapoverlay {
+ position: absolute;
+ top: 75%;
+ left: 3%;
 }
 
 #helpBtn{
@@ -87,7 +95,7 @@
 }
 
 .map_piece:hover {
-  fill-opacity: 1.0 !important;  
+  fill-opacity: 1.0 !important;
 }
 
 /* bar chat */
@@ -95,9 +103,6 @@
 .chart {
   display: block;
   width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-
 }
 
 .chart rect {
@@ -117,7 +122,7 @@
 
 /* The Overlay (background) */
 .overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
     height: 0;
     width: 100%;
     position: fixed; /* Stay in place */
@@ -165,7 +170,7 @@
 
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
+    .overlay a {font-size: 20px}:
     .closebtn {
         font-size: 40px !important;
         top: 15px;
@@ -173,8 +178,76 @@
     }
 }
 
-
 #helpInfo{
   font-size: 40px;
-  font-color: white;
+  color: white;
+}
+
+#pieChart {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-style: solid;
+  border-color: #f9f9f9;
+}
+
+#chart {
+    margin: 10px;
+    background-color: white;
+    display: inline-block !important;
+
+}
+
+#mapSection {
+  background-color: white !important;
+  height: 100% !important;
+  padding: 10px !important;
+  border-style: solid;
+  border-color: #f9f9f9;
+}
+
+#mapRow {
+  display:inline;
+}
+
+#mapdiv {
+   display: inline-block;
+   height:90% !important;
+}
+
+#dynamicSection {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#graphSection {
+  padding: 20px;
+}
+
+.chartText {
+  font-size: 28px;
+}
+
+.section {
+  margin:0;
+  background-color: lightgrey;
+}
+
+.sectionTitle {
+  margin: 0 !important;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.sectionDesc {
+  padding-top: 5px;
+  font-size: 19px;
+  padding-bottom: 20px;
+}
+
+#comms {
+  width: 90%;
+  background-color: white;
+  border-style: solid;
+  border-color: #f9f9f9;
 }

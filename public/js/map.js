@@ -7,16 +7,18 @@
   var race = $("#mapdiv").attr("data-race");
   var trans = $("#mapdiv").attr("data-transportation");
 
+
+      makeLegend();
   var communityData = d3.json("/communities", function(err, data) {
     if (err) {
       console.log(err);
       return;
     }
     makeMap(data);
+
   });
 
-})(d3);  
-
+})(d3);
 
 function makeMap(data) {
 
@@ -67,7 +69,7 @@ function makeMap(data) {
       .on("click", function(d) {
          printInfo(d.properties.NAME, data);
         $('html,body').animate({
-            scrollTop: $(".locationInfo").offset().top},
+            scrollTop: $("#locationInfo").offset().top},
                 'slow');
           })
        .on("mouseover",tip.show)
@@ -99,12 +101,6 @@ function makeMap(data) {
       this.stream.point(point.x, point.y);
     }
     });
-
-   legend = svg.append("g")
-    .attr("class","legend")
-    .attr("transform","translate(50,30)")
-    .style("font-size","12px")
-    .call(d3.legend)
 }
 
 function mapColor(name, data, max) {
@@ -131,4 +127,39 @@ function printInfo(name, data) {
       $('#commInfo').text(data[i].total);
     }
   }
+}
+
+function makeLegend() {
+
+  var legendRectSize = 18,
+          legendSpacing = 4;
+
+  var color = d3.scale.ordinal()
+      .domain(["Best Fit", " a", " b", " c", " d", " e", "Worst Fit", "No Data"])
+      .range(["green", "#BF7456","#C17256", "#ED524F", "#F05650", "#FE6565", "red", "grey"]);
+
+  var legend = d3.select("#mapoverlay").append('svg')
+    .append("g")
+    .selectAll("g")
+    .data(color.domain())
+    .enter()
+    .append('g')
+      .attr('class', 'legend')
+      .attr('transform', function(d, i) {
+        var height = legendRectSize;
+        var x = 0;
+        var y = i * height;
+        return 'translate(' + x + ',' + y + ')';
+    });
+
+  legend.append('rect')
+    .attr('width', legendRectSize)
+    .attr('height', legendRectSize)
+    .style('fill', color)
+    .style('stroke', color);
+
+  legend.append('text')
+    .attr('x', legendRectSize + legendSpacing)
+    .attr('y', legendRectSize - legendSpacing)
+    .text(function(d) { return d; });
 }

@@ -2,10 +2,10 @@
 <head>
 	<link rel="stylesheet" href="/css/map.css">
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/stylish-portfolio.css" rel="stylesheet"> 
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
 
@@ -14,12 +14,6 @@
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
    <style>
-    html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
     #map{ height: 100% }
   </style>
 
@@ -38,7 +32,7 @@
 				<img onClick="toIndex()" src="./img/logo.png" style="width: 40px; height: 40px; margin-left: 15px;">
 			</a>
 			Al Manzel
-			
+
 		</div>
 		<div class="col-md-8">
 	      <!--<div class="btn-group" role="group" id="topbuttons" style="display:inline-block;float:right; margin-right:2%; margin-top: 15px">
@@ -54,7 +48,7 @@
 			    <b>Al Manzel</b> means <b>home</b> in Arabic.
 			    </br>
 			    We aim to help refugees and immigrants find a new home in San Diego.</br>
-			    Using factors such as housing cost, language, culture, </br>education, and age range, we help you and your family </br>have the best chance to succeed in San Diego. 
+			    Using factors such as housing cost, language, culture, </br>education, and age range, we help you and your family </br>have the best chance to succeed in San Diego.
 
 			  </div>
 
@@ -77,232 +71,231 @@
 	<div class="spacer">
     	&nbsp;
 	</div>
-	<div class="row" style="height:100%; background-color: #bdb1a6;">
-		<div class="col-md-3" id="filter" >
-		      <center>
-			<form>
-			</br>
-		      <p><label for="adults">Number of Adults</label></br>
-			  <select name="adults" id="adults"class="input-lg" >
-				  <option value="0 Adults">0 Adults</option>
-                  <option value="1 Adults">1 Adult</option>
-                  <option value="2 Adults">2 Adults</option>
-                  <option value="3 Adults">3 Adults</option>
-                  <option value="4 Adults">4 Adults</option>
-                  <option value="5+ Adults">5+ Adults</option>
-                  <option value="Prefer not to answer">Prefer not to answer</option>
-			  </select></p>
 
-			  <p><label for="children">Number of Children</label></br>
-			  <select name="children" id="children"class="input-lg" >
-				  <option value="0 Children">0 Children</option>
-                  <option value="1 Child">1 Child</option>
-                  <option value="2 Children">2 Children</option>
-                  <option value="3 Children">3 Children</option>
-                  <option value="4 Children">4 Children</option>
-                  <option value="5+ Children">5+ Children</option>
-                  <option value="Prefer not to answer">Prefer not to answer</option>
-			  </select></p>
 
-			  <p><label for="income">Expected Income</label></br>
-			  <select name="income" id="income"class="input-lg" >
-				  <option value="0K - 15K">0K - 15K</option>
-                  <option value="15K - 30K">15K - 30K</option>
-                  <option value="30K - 50K">30K - 50K</option>
-                  <option value="50K - 70K">50K - 70K</option>
-                  <option value="70K - 90K">70K - 90K</option>
-                  <option value="90k+">90k+</option>
-                  <option value="Prefer not to answer">Prefer not to answer</option>
-			  </select></p>
+	<div id="mapSection" class="section">
+		<div id="mapRow" class="row">
+			<div class="col-md-3" id="filter" >
+			      <center>
+				<form>
+				</br>
+			      <p><label for="adults">Number of Adults</label></br>
+				  <select name="adults" id="adults"class="input-lg" >
+					  <option value="0 Adults">0 Adults</option>
+	                  <option value="1 Adults">1 Adult</option>
+	                  <option value="2 Adults">2 Adults</option>
+	                  <option value="3 Adults">3 Adults</option>
+	                  <option value="4 Adults">4 Adults</option>
+	                  <option value="5+ Adults">5+ Adults</option>
+	                  <option value="Prefer not to answer">Prefer not to answer</option>
+				  </select></p>
 
-			  <p><label for="race">Race</label></br>
-			  <select name="race" id="race"class="input-lg" >
-				  <option value="Middle Eastern">Middle Eastern</option>
-                  <option value="Asian">Asian</option>
-                  <option value="White">White</option>
-                  <option value="Black">Black</option>
-                  <option value="Hispanic">Hispanic</option>
-                  <option value="Prefer not to answer">Prefer not to answer</option>
-			  </select></p>
+				  <p><label for="children">Number of Children</label></br>
+				  <select name="children" id="children"class="input-lg" >
+					  <option value="0 Children">0 Children</option>
+	                  <option value="1 Child">1 Child</option>
+	                  <option value="2 Children">2 Children</option>
+	                  <option value="3 Children">3 Children</option>
+	                  <option value="4 Children">4 Children</option>
+	                  <option value="5+ Children">5+ Children</option>
+	                  <option value="Prefer not to answer">Prefer not to answer</option>
+				  </select></p>
 
-			  <p><label for="transportation">Transportation</label></br>
-			  <select name="transportation" id="transportation" class="input-lg" >
-				  <option id="Car">Car</option>
-				  <option id="Public Transport">Public Transport</option>
-				  <option id="Prefer not to answer">Prefer not to answer</option>
-			  </select></br></p>
+				  <p><label for="income">Expected Income</label></br>
+				  <select name="income" id="income"class="input-lg" >
+					  <option value="0K - 15K">0K - 15K</option>
+	                  <option value="15K - 30K">15K - 30K</option>
+	                  <option value="30K - 50K">30K - 50K</option>
+	                  <option value="50K - 70K">50K - 70K</option>
+	                  <option value="70K - 90K">70K - 90K</option>
+	                  <option value="90k+">90k+</option>
+	                  <option value="Prefer not to answer">Prefer not to answer</option>
+				  </select></p>
 
-			  <input type="submit" value="Update" id="updateBtn" class="btn btn-secondary">
-			</form>
-		</center>
+				  <p><label for="race">Race</label></br>
+				  <select name="race" id="race"class="input-lg" >
+					  <option value="Middle Eastern">Middle Eastern</option>
+	                  <option value="Asian">Asian</option>
+	                  <option value="White">White</option>
+	                  <option value="Black">Black</option>
+	                  <option value="Hispanic">Hispanic</option>
+	                  <option value="Prefer not to answer">Prefer not to answer</option>
+				  </select></p>
+
+				  <p><label for="transportation">Transportation</label></br>
+				  <select name="transportation" id="transportation" class="input-lg" >
+					  <option id="Car">Car</option>
+					  <option id="Public Transport">Public Transport</option>
+					  <option id="Prefer not to answer">Prefer not to answer</option>
+				  </select></br></p>
+
+				  <input type="submit" value="Update" id="updateBtn" class="btn btn-secondary">
+				</form>
+			</center>
+			</div>
+
+			<div id="mapdiv" class="col-md-9"
+			data-adults="{{adults}}" data-children="{{children}}" data-income="{{income}}" data-race="{{race}}" data-transportation="{{transportation}}">
+				<div id="map"></div>
+				<div id="mapoverlay"></div>
+			</div>
 		</div>
-
-		<div id="mapdiv" class="col-md-9" style="display: inline-block; height:100% !important;" data-adults="{{adults}}" data-children="{{children}}" data-income="{{income}}" data-race="{{race}}" data-transportation="{{transportation}}">
-			<div id="map" style="width:100% !important; height:100% !important;"></div>
-		</div>
-	 </row>
 	</div>
 
-	<center>
-		
-		<div class="locationInfo" class="jumbotron vertical-center">
-		<br></br></br></br>
-		<h1 style="margin:15px" class="communityName">El Cajon<h1>
-		<div id="infoText">More Info Here <span id="commInfo"></span></div>
-		<img src="./img/img1.jpg" style="width: 350px; height: 350px; margin: 15px;">
-		<img src="./img/img2.jpg" style="width: 350px; height: 350px; margin: 15px;">
-		<img src="./img/img3.gif" style="width: 350px; height: 350px; margin: 15px;">
-			
-		</div>
 
-		<div class="section">
-			<h1>Crime Data</h1>
-
-			<div id="chart" class="chart">
+	<div id="dynamicSection" class="section">
+		<center>
+				<h3 id="locationInfo" class="sectionTitle">Community Info</h3>
+				<p class="sectionDesc">Analyze and compare communities</p>
+			<div id="comms">
+				<div class="communityName">El Cajon</div>
+				<div id="infoText">More Info Here <span id="commInfo"></span></div>
 			</div>
+		</center>
+	</div>
 
-			<div id-"crimeData">Number of Crimes in the Area: <span id="crimeInfo"></span></div>
-			
-		</div>
 
-		<div class="section">
-			<div id="pieChart" class="jumbotron vertical-center">
-				
-				<script src="./js/d3.min.js"></script>
-				<script src="./js/d3pie.js"></script>
-				<script>
-					var pie = new d3pie("pieChart", {
-						"header": {
-							"title": {
-								"text": "Current Income Distribution",
-								"fontSize": 22,
-								"font": "verdana"
+	<div id="graphSection" class="section">
+		<center>
+			<h3 class="sectionTitle"> Relevant Information</h3>
+			<p class="sectionDesc">Find out more about the San Diego Communities</p>
+		</center>
+		<div class="row" id="graphRow">
+			<div class="col-xs-6">
+				<center>
+					<div class="chart" id="chart" style="width:100% !important; display:inline">
+							<span class="chartText">Crimes by Area in 2012</span>
+					</div>
+			</center>
+			</div>
+			<div class="col-xs-6">
+				<div id="pieChart" >
+
+					<script src="./js/d3.min.js"></script>
+					<script src="./js/d3pie.js"></script>
+					<script>
+						var pie = new d3pie("pieChart", {
+							"header": {
+								"title": {
+									"text": "Current Income Distribution",
+									"fontSize": 22,
+									"font": "verdana"
+								},
+								"subtitle": {
+									"color": "#999999",
+									"fontSize": 10,
+									"font": "verdana"
+								},
+								"titleSubtitlePadding": 12
 							},
-							"subtitle": {
+							"footer": {
+								"text": "Source: DELPHI",
 								"color": "#999999",
-								"fontSize": 10,
-								"font": "verdana"
+								"fontSize": 11,
+								"font": "open sans",
+								"location": "bottom-center"
 							},
-							"titleSubtitlePadding": 12
-						},
-						"footer": {
-							"text": "Source: DELPHI",
-							"color": "#999999",
-							"fontSize": 11,
-							"font": "open sans",
-							"location": "bottom-center"
-						},
-						"size": {
-							"canvasWidth": 800,
-							"pieOuterRadius": "88%"
-						},
-						"data": {
-							"content": [
-								{
-									"label": "<$15K",
-									"value": 5725,
-									"color": "#2383c1"
+							"size": {
+								"canvasWidth": 800,
+								"pieOuterRadius": "88%"
+							},
+							"data": {
+								"content": [
+									{
+										"label": "<$15K",
+										"value": 5725,
+										"color": "#2383c1"
+									},
+									{
+										"label": "$15K - $35K",
+										"value": 9717,
+										"color": "#64a61f"
+									},
+									{
+										"label": "$35K - $50K",
+										"value": 5821,
+										"color": "#7b6788"
+									},
+									{
+										"label": "$50K - $75K",
+										"value": 7174,
+										"color": "#a05c56"
+									},
+									{
+										"label": "$75K - $100K",
+										"value": 4708,
+										"color": "#961919"
+									},
+									{
+										"label": "$100K - $150K",
+										"value": 4842,
+										"color": "#a7b36d"
+									},
+									{
+										"label": "$150K - $200K",
+										"value": 1867,
+										"color": "#e98125"
+									},
+									{
+										"label": ">$200K",
+										"value": 1431,
+										"color": "#d0743c"
+									}
+								]
+							},
+							"labels": {
+								"outer": {
+									"pieDistance": 32
 								},
-								{
-									"label": "$15K - $35K",
-									"value": 9717,
-									"color": "#64a61f"
+								"mainLabel": {
+									"color": "#000000",
+									"font": "verdana"
 								},
-								{
-									"label": "$35K - $50K",
-									"value": 5821,
-									"color": "#7b6788"
+								"percentage": {
+									"color": "#e1e1e1",
+									"font": "verdana",
+									"decimalPlaces": 0
 								},
-								{
-									"label": "$50K - $75K",
-									"value": 7174,
-									"color": "#a05c56"
+								"value": {
+									"color": "#e1e1e1",
+									"font": "verdana"
 								},
-								{
-									"label": "$75K - $100K",
-									"value": 4708,
-									"color": "#961919"
+								"lines": {
+									"enabled": true,
+									"color": "#cccccc"
 								},
-								{
-									"label": "$100K - $150K",
-									"value": 4842,
-									"color": "#a7b36d"
-								},
-								{
-									"label": "$150K - $200K",
-									"value": 1867,
-									"color": "#e98125"
-								},
-								{
-									"label": ">$200K",
-									"value": 1431,
-									"color": "#d0743c"
+								"truncation": {
+									"enabled": true
 								}
-							]
-						},
-						"labels": {
-							"outer": {
-								"pieDistance": 32
 							},
-							"mainLabel": {
-								"color": "#000000",
-								"font": "verdana"
-							},
-							"percentage": {
-								"color": "#e1e1e1",
-								"font": "verdana",
-								"decimalPlaces": 0
-							},
-							"value": {
-								"color": "#e1e1e1",
-								"font": "verdana"
-							},
-							"lines": {
+							"tooltips": {
 								"enabled": true,
-								"color": "#cccccc"
+								"type": "placeholder",
+								"string": "{value} households"
 							},
-							"truncation": {
-								"enabled": true
-							}
-						},
-						"tooltips": {
-							"enabled": true,
-							"type": "placeholder",
-							"string": "{value} households"
-						},
-						"effects": {
-							"pullOutSegmentOnClick": {
-								"effect": "linear",
-								"speed": 400,
-								"size": 8
-							}
-						},
-						"callbacks": {}
-					});
-				</script>
+							"effects": {
+								"pullOutSegmentOnClick": {
+									"effect": "linear",
+									"speed": 400,
+									"size": 8
+								}
+							},
+							"callbacks": {}
+						});
+					</script>
+				</div>
 			</div>
 		</div>
 
-
-		<div class="section">
-			<h3> Crime Data</h3>
-			<div id="demoChart">
-			</div>
-			<div> 
-				<p>
-				Description
-				<p>
-			</div>
-		</div>
-	</center>
+	</div>
 
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.10.0/d3-legend.js"></script>
   <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
   <script src="./js/map.js"></script>
   <script src="./js/index.js"></script>
   <script src="./js/custom.js"></script>
-  <script src="./js/index2.js"></script>
   <script>
 
   var adults = $("#mapdiv").attr("data-adults");
@@ -319,8 +312,4 @@
   </script>
 </body>
 
-</html> 
-
-
-
-
+</html>
