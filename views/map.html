@@ -86,9 +86,8 @@
 				<form>
 				</br>
 			      <p><label for="adults">Number of Adults</label></br>
-				  <select name="adults" id="adults"class="input-lg" >
-					  <option value="0 Adults">0 Adults</option>
-	                  <option value="1 Adults">1 Adult</option>
+				  <select name="adults" id="adults" class="input-lg" >
+	          <option value="1 Adult">1 Adult</option>
 	                  <option value="2 Adults">2 Adults</option>
 	                  <option value="3 Adults">3 Adults</option>
 	                  <option value="4 Adults">4 Adults</option>
@@ -387,6 +386,7 @@
   var race = $("#mapdiv").attr("data-race");
   var trans = $("#mapdiv").attr("data-transportation");
 
+	console.log(adults)
   $("#adults").val(adults);
   $("#children").val(child);
   $("#income").val(inc);
